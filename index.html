@@ -13,14 +13,150 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header></header>
-    <main class="container"></main>
+    <header class="main-header">
+      
+        <img
+          class="header-image"
+          src="https://via.placeholder.com/500x150.png?text=Picture of dogs and cats"
+        />
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#">Pet Search</a></li>
+            <li><a href="#">Breed Info</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      
+    </header>
+    <section class="splash">
+      <h1>Furry Buddies Pet Finder</h1></section>
+      <main class="container search-again"></main>
+      <h2 class="buddy">What Kind of Furry Buddy Do You Want?</h2>
+      <div class="buddy-type buddy"> 
+        
+      
+          <a href="#"><img class="dog-pic" src="images/Walter3.jpg"></a>
+          <a href="#"><img class="cat-pic" src="images/Carl2.jpg"></a>
+      
+      </div>
+      
+
+      <section class="forms">
+        <div class="flex">
+        <div class="pic-dog"><img class="dog-pic" src="images/Walter3.jpg"></div>
+        <div class="pic-cat"><img class="cat-pic" src="images/Carl2.jpg"></div>
+        <div class="search-form">
+          <form id="search-form">
+
+            <p class="search-age-dog ">
+              <label for="search-age-dog"> Age:</label>
+              <select name="search-age-dog" id="search-age-dog">
+                  <option value=""></option>
+                  <option value="Puppy">Puppy</option>
+                  <option value="Young">Young</option>
+                  <option value="Adult">Adult</option>
+                  <option value="Senior">Senior</option>
+                  
+              </select>
+            </p>
+
+            <p class="search-age-cat ">
+              <label for="search-age-kitten"> Age:</label>
+              <select name="search-age-kitten" id="search-age-kitten">
+                  <option value=""></option>
+                  <option value="Kitten">Kitten</option>
+                  <option value="Young">Young</option>
+                  <option value="Adult">Adult</option>
+                  <option value="Senior">Senior</option>
+                  
+              </select>
+            </p>
+
+            <p class="search-size-dog ">
+              <label for="search-size-dog"> Size:</label>
+              <select name="search-size-dog" id="search-size-dog">
+                  <option value=""></option>
+                  <option value="Small">Small</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Large">Large</option>
+                  <option value="X-Large">X-Large</option>
+                  
+              </select>
+            </p>
+
+            <p class="search-size-cat ">
+              <label for="search-size-cat"> Size:</label>
+              <select name="search-size-cat" id="search-size-cat">
+                  <option value=""></option>
+                  <option value="Small">Small</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Large">Large</option>
+                  <option value="X-Large">X-Large</option>
+                  
+              </select>
+            </p>
+
+            <p>
+              <label for="search-gender"> Gender:</label>
+              <select name="search-gender" id="search-gender">
+                  <option value=""></option>
+                  <option value="Boy">Boy</option>
+                  <option value="Girl">Girl</option>
+                  
+              </select>
+            </p>
+
+            <p class="search-breed-dog "> 
+              <label for="search-breed-dog"> Breed:</label>
+              <select name="search-breed-dog" id="search-breed-dog">
+                  <option value=""></option>
+                  <option value="German Shepherd">Gernman Shepherd</option>
+                  <option value="Golden Retriever">Golden Retriever</option>
+                  
+              </select>
+            </p>
+
+            <p class="search-breed-cat ">
+              <label for="search-breed-cat"> Breed:</label>
+              <select name="search-breed-cat" id="search-breed-cat">
+                  <option value=""></option>
+                  <option value="Siamese">Siamese</option>
+                  <option value="Tabby">Tabby</option>
+                  
+              </select>
+            </p>
+
+            <p>
+              <label for="search-zip"
+                >Zip Code:</label
+              >
+
+              <input type="text" name="search-zip" id="search-zip" required />
+            </p>
+
+            <p>
+              <label for="max-miles">Search Radius: </label>
+              <input type="number" name="max-miles" id="max-miles" value="10" />
+            </p>
+
+            <p>
+              <input type="submit" value="Find Dogs!" class="submit-dog" />
+            <input type="submit" value="Find Cats!" class="submit-cat" />
+            </p>
+          </form>
+        </div>
+      </div>
+      </section>
+
+
+      
+      <section class="results" >
+        <h2>Available Pets</h2>
+        <ul id="results-list"></ul>
+      </section>
+    </div>
     <footer></footer>
-    <script>
-      src = "https://code.jquery.com/jquery-3.3.1.js";
-      integrity = "sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=";
-      crossorigin = "anonymous";
-    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
