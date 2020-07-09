@@ -43,8 +43,8 @@
 
       <section class="forms">
         <div class="flex">
-        <div class="pic-dog"><img class="dog-pic" src="images/Walter3.jpg"></div>
-        <div class="pic-cat"><img class="cat-pic" src="images/Carl2.jpg"></div>
+        <div class="pic-dog hide-cat"><img class="dog-pic" src="images/Walter3.jpg"></div>
+        <div class="pic-cat hide-dog"><img class="cat-pic" src="images/Carl2.jpg"></div>
         <div class="search-form">
           <form id="search-form">
 
@@ -62,7 +62,7 @@
 
             
 
-           <p class="search-size-dog">
+           <p class="search-size-dog hide-cat">
               <label for="search-size-dog"> Size:</label>
               <select name="search-size-dog" id="search-size-dog">
                   <option value=""></option>
@@ -74,7 +74,7 @@
               </select>
             </p>
 
-            <!-- <p class="search-size-cat">
+            <p class="search-size-cat hide-dog">
               <label for="search-size-cat"> Size:</label>
               <select name="search-size-cat" id="search-size-cat">
                   <option value=""></option>
@@ -84,19 +84,19 @@
                   <option value="X-Large">X-Large</option>
                   
               </select>
-            </p>  -->
+            </p>
 
             <p>
               <label for="search-gender"> Gender:</label>
               <select name="search-gender" id="search-gender">
                   <option value=""></option>
-                  <option value="Boy">Boy</option>
-                  <option value="Girl">Girl</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
                   
               </select>
             </p>
 
-            <p class="search-breed-dog"> 
+            <p class="search-breed-dog hide-cat"> 
               <label for="search-breed-dog"> Breed:</label>
               <select name="search-breed-dog" id="search-breed-dog">
                   <option value=""></option>
@@ -106,7 +106,7 @@
               </select>
             </p>
 
-            <!-- <p class="search-breed-cat">
+            <p class="search-breed-cat hide-dog">
               <label for="search-breed-cat"> Breed:</label>
               <select name="search-breed-cat" id="search-breed-cat">
                   <option value=""></option>
@@ -114,7 +114,7 @@
                   <option value="Tabby">Tabby</option>
                   
               </select>
-            </p> -->
+            </p>
 
             <p>
               <label for="search-zip"
@@ -130,8 +130,8 @@
             </p> 
 
             <p>
-              <input type="submit" value="Find Dogs!" class="submit-dog" />
-            <!-- <input type="submit" value="Find Cats!" class="submit-cat" />  -->
+              <input type="submit" value="Find Dogs!" class="submit-dog hide-cat" />
+              <input type="submit" value="Find Cats!" class="submit-cat hide-dog" />
             </p>
           </form>
         </div>
@@ -139,12 +139,22 @@
       </section>
 
 
-      <p id="error-message" class="error-message"></p>
+      <!-- <p id="error-message" class="error-message"></p> -->
       <section id="results" class="hidden" >
         <h2>Available Pets</h2>
         <div id="results-list"></div>
       </section>
     </div>
+
+    <section id="modal">
+      <h2>name</h2>
+      <img src=""/>
+      <p class="breed">breed</p>
+      <p class="age">age</p>
+      <a href="#" class="close">x</a>
+    </section>
+    <div id="overlay"></div>
+
     <footer></footer>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="index.js"></script>
