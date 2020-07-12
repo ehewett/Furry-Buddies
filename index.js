@@ -30,7 +30,7 @@ function displayResults(responseJson) {
       });
 
       $("#results-list").append(`
-    <div class="card" data-thumbnail="${result.attributes.pictureThumbnailUrl}" data-name="${result.attributes.name}" data-breed="${result.attributes.breedPrimary}" data-age="${result.attributes.ageGroup}">
+    <div class="card"  data-thumbnail="${result.attributes.pictureThumbnailUrl}" data-name="${result.attributes.name}" data-breed="${result.attributes.breedPrimary}" data-age="${result.attributes.ageGroup}">
         <img class="card-image" src="${result.attributes.pictureThumbnailUrl}" />
         <div class="card-container">
           <h4>${result.attributes.name} </h4>
@@ -38,6 +38,7 @@ function displayResults(responseJson) {
           <p>${result.attributes.ageGroup}</p>
           <p>${result.attributes.sex}</p>
           <p>${result.attributes.sizeGroup}</p>
+        
         </div>
     </div>`);
     }
@@ -108,8 +109,6 @@ function getAnimals(
     });
   }
 
-  
-
   const options = {
     method: "POST",
     headers: {
@@ -146,21 +145,20 @@ function watchForm(animalType) {
     const searchZip = $("#search-zip").val();
     const searchMiles = $("#search-miles").val();
     const searchAge = $("#search-age").val();
-    
-    if (animalType="Dog") {
-    
-    const searchSize = $("#search-size-dog").val();
-    const searchBreed = $("#search-breed-dog").val();
-    } else {
+    let searchSize = "";
+    let searchBreed = "";
 
-     const searchSize = $("#search-size-cat").val();
-     const searchBreed = $("#search-breed-cat").val();
 
-    }
+    if (animalType === "Dog") {
+  
 
-    console.log(searchSize);
-    console.log(searchBreed);
-
+   searchSize = $("#search-size-dog").val();
+   searchBreed = $("#search-breed-dog").val();
+} else {
+  searchSize = $("#search-size-cat").val();
+  searchBreed = $("#search-breed-cat").val();
+}
+   
     getAnimals(
       animalType,
       searchGender,
@@ -235,8 +233,11 @@ $("#results-list").on("click", ".card", function () {
   let thumbnail = $(this).data("thumbnail");
   let breed = $(this).data("breed");
   let age = $(this).data("age");
+
+  // let pics = $(this).data("pics");
   $("#modal h2").text(name);
   $("#modal img").attr("src", thumbnail);
+  // $("#modal img").attr("src", pics);
   $("#modal p.breed").text(breed);
   $("#modal p.age").text(age);
   $("#overlay").fadeIn();
@@ -250,6 +251,7 @@ $(".search-again").click(function (e) {
   $("#results").addClass("hidden");
   $(".buddy").show();
   animalType = "";
+  $("#search-form")[0].reset();
 });
 
 $(displayForm);

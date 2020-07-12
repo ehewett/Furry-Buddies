@@ -8,11 +8,65 @@
         <title>Pet Details</title>
     </head>
     <body>
-        <section id="pet-detail"> 
-
-        </section> 
-        
+         <p class="search-breed-dog show-dog"> 
+              <label for="search-breed-dog"> Breed:</label>
+              <select name="search-breed-dog" id="search-breed-dog">
+                  <option value=""></option>
+                  <option value="Affenpinscher">Affenpinscher</option>
+                  <option value="Afghan Hound">Afghan Hound</option>
+                  <option value="Airedale Terrier">Airedale Terrier</option>
+                  <option value="Akbashd">Akbash</option>
+                  <option value="Akita">Akita</option>
+                  <option value="Alaskan Malamute">Alaskan Malamute</option>
+                  <option value="American Bulldog">American Bulldog</option>
+                  <option value="American Eskimo Dog">American Eskimo Dog</option>
+                  <option value="American Foxhound">American Foxhound</option>
+                  <option value="American Hairless Terrier">American Hairless Terrier</option>
+                  <option value="American Pit Bull Terrier">American Pit Bull Terrier</option>
+                  <option value="American Staffordshire Terrier">American Staffordshire Terrier</option>
+                  <option value="American Water Spaniel">American Water Spaniel</option>
+                  <option value="Anatolian Karabash Dog">Anatolian Karabash Dog</option>
+                  <option value="Anatolian Shepherd">Anatolian Shepherd</option>
+                  <option value="Appenzell Mountain Dog">Appenzell Mountain Dog</option>
+                  <option value="Argentinian Mastiff">Argentinian Mastiff</option>
+                  <option value="Australian Cattle Dog/Blue Heeler">Australian Cattle Dog/Blue Heeler</option>
+                  <option value="Australian Kelpie">Australian Kelpie</option>
+                  <option value="Australian Shepherd">Australian Shepherd</option>
+                  <option value="Australian Terrier">Australian Terrier</option>
+                  <option value="Basenji">Basenji</option>
+                  <option value="Basset Griffon Vendeen">Basset Griffon Vendeen</option>
+                  <option value="Basset Hound">Basset Hound</option>
+                  <option value="Golden Retriever">Golden Retriever</option>
+                  <option value="Golden Retriever">Golden Retriever</option>
+                  <option value="Golden Retriever">Golden Retriever</option>
+                  <option value="Golden Retriever">Golden Retriever</option>
+                  <option value="Golden Retriever">Golden Retriever</option>
+                  <option value="Golden Retriever">Golden Retriever</option>
+                  
+              </select>
+            </p>
        
+// iterate through the data array
+    for (let i = 0; i < responseJson.data.length; i++) {
+      let pictureHTML = "";
+      let included = responseJson.included;
+      let result = responseJson.data[i];
+      result.relationships.pictures.data.forEach((picObj) => {
+        const picture = included.find(
+          (inc) => inc.id === picObj.id && inc.type === "pictures"
+        );
+
+        pictureHTML +=
+          picture !== undefined
+            ? `<img src="${picture.attributes.large.url}"/>`
+            : "";
+      });
+
+
+
+
+
+
        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     
     <script src="index.js"></script>
