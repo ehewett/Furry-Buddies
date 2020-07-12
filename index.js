@@ -99,7 +99,7 @@ function getAnimals(
       criteria: searchBreed,
     });
   }
-  
+
   if (searchSize !== "") {
     raw.data.filters.push({
       fieldName: "animals.sizeGroup",
@@ -146,10 +146,18 @@ function watchForm(animalType) {
     const searchZip = $("#search-zip").val();
     const searchMiles = $("#search-miles").val();
     const searchAge = $("#search-age").val();
+    
+    if (animalType="Dog") {
+    
     const searchSize = $("#search-size-dog").val();
     const searchBreed = $("#search-breed-dog").val();
+    } else {
 
-    
+     const searchSize = $("#search-size-cat").val();
+     const searchBreed = $("#search-breed-cat").val();
+
+    }
+
     console.log(searchSize);
     console.log(searchBreed);
 

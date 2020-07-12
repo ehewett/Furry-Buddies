@@ -58,13 +58,6 @@ function getAnimals(
 ) {
   console.log(animalType);
   const raw = {
-    // data: {
-    //   filterRadius: {
-    //       miles: searchMiles,
-    //       postalcode: searchZip
-    //     }
-    // }
-
     data: {
       filters: [],
       // filterProcessing: "1 and 2",
@@ -99,6 +92,14 @@ function getAnimals(
     });
   }
 
+  if (searchBreed !== "") {
+    raw.data.filters.push({
+      fieldName: "animals.breedPrimary",
+      operation: "equal",
+      criteria: searchBreed,
+    });
+  }
+
   if (searchSize !== "") {
     raw.data.filters.push({
       fieldName: "animals.sizeGroup",
@@ -107,13 +108,7 @@ function getAnimals(
     });
   }
 
-  if (searchBreed !== "") {
-    raw.data.filters.push({
-      fieldName: "animals.breedPrimary",
-      operation: "equal",
-      criteria: searchBreed,
-    });
-  }
+  
 
   const options = {
     method: "POST",
@@ -151,19 +146,16 @@ function watchForm(animalType) {
     const searchZip = $("#search-zip").val();
     const searchMiles = $("#search-miles").val();
     const searchAge = $("#search-age").val();
-
-    // if (animalType === "dogs") {
-
+    
+    
+    
     const searchSize = $("#search-size-dog").val();
-
     const searchBreed = $("#search-breed-dog").val();
 
-    // else {
-
-    // const searchSize = $("#search-size-cat").val();
-    // const searchBreed = $("#search-breed-cat").val();
-
-    // }
+    
+    
+    console.log(searchSize);
+    console.log(searchBreed);
 
     getAnimals(
       animalType,
@@ -195,7 +187,6 @@ function displayForm() {
     $(".show-dog").hide();
     $(".show-cat").show();
     animalType = "Cat";
-
     watchForm(animalType);
   });
 
