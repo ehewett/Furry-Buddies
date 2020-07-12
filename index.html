@@ -30,7 +30,7 @@
     </header>
     <section class="splash">
       <h1>Furry Buddies Pet Finder</h1></section>
-      <main class="container search-again"></main>
+      <!-- <div class="container search-again"></div> -->
       <h2 class="buddy">What Kind of Furry Buddy Do You Want?</h2>
       <div class="buddy-type buddy"> 
         
@@ -43,8 +43,8 @@
 
       <section class="forms">
         <div class="flex">
-        <div class="pic-dog hide-cat"><img class="dog-pic" src="images/Walter3.jpg"></div>
-        <div class="pic-cat hide-dog"><img class="cat-pic" src="images/Carl2.jpg"></div>
+        <div class="pic-dog show-dog"><img class="dog-pic" src="images/Walter3.jpg"></div>
+        <div class="pic-cat show-cat"><img class="cat-pic" src="images/Carl2.jpg"></div>
         <div class="search-form">
           <form id="search-form">
 
@@ -62,7 +62,7 @@
 
             
 
-           <p class="search-size-dog hide-cat">
+           <p class="search-size-dog show-dog">
               <label for="search-size-dog"> Size:</label>
               <select name="search-size-dog" id="search-size-dog">
                   <option value=""></option>
@@ -74,7 +74,7 @@
               </select>
             </p>
 
-            <p class="search-size-cat hide-dog">
+            <p class="search-size-cat show-cat">
               <label for="search-size-cat"> Size:</label>
               <select name="search-size-cat" id="search-size-cat">
                   <option value=""></option>
@@ -96,7 +96,7 @@
               </select>
             </p>
 
-            <p class="search-breed-dog hide-cat"> 
+            <p class="search-breed-dog show-dog"> 
               <label for="search-breed-dog"> Breed:</label>
               <select name="search-breed-dog" id="search-breed-dog">
                   <option value=""></option>
@@ -106,7 +106,7 @@
               </select>
             </p>
 
-            <p class="search-breed-cat hide-dog">
+            <p class="search-breed-cat show-cat">
               <label for="search-breed-cat"> Breed:</label>
               <select name="search-breed-cat" id="search-breed-cat">
                   <option value=""></option>
@@ -130,8 +130,8 @@
             </p> 
 
             <p>
-              <input type="submit" value="Find Dogs!" class="submit-dog hide-cat" />
-              <input type="submit" value="Find Cats!" class="submit-cat hide-dog" />
+              <input type="submit" value="Find Dogs!" class="submit-dog show-dog" />
+              <input type="submit" value="Find Cats!" class="submit-cat show-cat" />
             </p>
           </form>
         </div>
@@ -139,11 +139,13 @@
       </section>
 
 
-      <!-- <p id="error-message" class="error-message"></p> -->
+      <p id="error-message" class="error-message"></p>
       <section id="results" class="hidden" >
         <h2>Available Pets</h2>
         <div id="results-list"></div>
+       <div class="search-again container">Search Again</div>
       </section>
+
     </div>
 
     <section id="modal">
