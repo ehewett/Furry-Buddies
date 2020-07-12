@@ -30,7 +30,6 @@
     </header>
     <section class="splash">
       <h1>Furry Buddies Pet Finder</h1></section>
-      <!-- <div class="container search-again"></div> -->
       <h2 class="buddy">What Kind of Furry Buddy Do You Want?</h2>
       <div class="buddy-type buddy"> 
         
@@ -66,10 +65,10 @@
               <label for="search-size-dog"> Size:</label>
               <select name="search-size-dog" id="search-size-dog">
                   <option value=""></option>
-                  <option value="Small">Small</option>
-                  <option value="Medium">Medium</option>
-                  <option value="Large">Large</option>
-                  <option value="X-Large">X-Large</option>
+                  <option value="Small">Small (0-25 lbs)</option>
+                  <option value="Medium">Medium (26-60 lbs)</option>
+                  <option value="Large">Large (61-100 lbs)</option>
+                  <option value="X-Large">X-Large (101 lbs +)</option>
                   
               </select>
             </p>
@@ -78,10 +77,10 @@
               <label for="search-size-cat"> Size:</label>
               <select name="search-size-cat" id="search-size-cat">
                   <option value=""></option>
-                  <option value="Small">Small</option>
-                  <option value="Medium">Medium</option>
-                  <option value="Large">Large</option>
-                  <option value="X-Large">X-Large</option>
+                  <option value="Small">Small (0-6 lbs)</option>
+                  <option value="Medium">Medium (7-11 lbs)</option>
+                  <option value="Large">Large (12-16 lbs)</option>
+                  <option value="X-Large">X-Large (17 lbs +)</option>
                   
               </select>
             </p>
@@ -100,7 +99,7 @@
               <label for="search-breed-dog"> Breed:</label>
               <select name="search-breed-dog" id="search-breed-dog">
                   <option value=""></option>
-                  <option value="German Shepherd">Gernman Shepherd</option>
+                  <option value="German Shepherd">German Shepherd</option>
                   <option value="Golden Retriever">Golden Retriever</option>
                   
               </select>
@@ -126,7 +125,7 @@
 
             <p>
               <label for="search-miles">Search Radius (miles): </label>
-              <input type="number" name="search-miles" id="search-miles" value="10" />
+              <input type="number" name="search-miles" id="search-miles" value="50" />
             </p> 
 
             <p>
@@ -139,7 +138,7 @@
       </section>
 
 
-      <p id="error-message" class="error-message"></p>
+      
       <section id="results" class="hidden" >
         <h2>Available Pets</h2>
         <div id="results-list"></div>
