@@ -15,29 +15,75 @@ function displayResults(responseJson) {
   } else {
     // iterate through the data array
     for (let i = 0; i < responseJson.data.length; i++) {
-      let pictureHTML = "";
+      let pictureHTML = [];
+      // let orgHTML = "";
+      let orgHTML = [];
       let included = responseJson.included;
       let result = responseJson.data[i];
-      result.relationships.pictures.data.forEach((picObj) => {
-        const picture = included.find(
-          (inc) => inc.id === picObj.id && inc.type === "pictures"
-        );
+      if (result.relationships.pictures) {
+        result.relationships.pictures.data.forEach((picObj) => {
+          const picture = included.find(
+            (inc) => inc.id === picObj.id && inc.type === "pictures"
+          );
 
-        pictureHTML +=
-          picture !== undefined
-            ? `<img src="${picture.attributes.large.url}"/>`
-            : "";
-      });
+          if (picture) {
+            pictureHTML.push(picture.attributes.large.url);
+          }
+        });
+      }
+
+      if (!pictureHTML.length) {
+        pictureHTML.push("https://placeholder.com/50x50");
+      }
+
+      if (result.relationships.orgs) {
+        result.relationships.orgs.data.forEach((orgObj) => {
+          const org = included.find(
+            (inc) => inc.id === orgObj.id && inc.type === "orgs"
+          );
+
+          if (org) {
+            orgHTML.push(
+              org.attributes.name,
+              org.attributes.email,
+              org.attributes.url
+            );
+          }
+        });
+      }
+
+      if (!orgHTML.length) {
+        orgHTML.push("No Info Available");
+      }
+
+      // result.relationships.orgs.data.forEach((orgObj) => {
+      //   const org = included.find(
+      //     (inc) => inc.id === orgObj.id && inc.type === "orgs"
+      //   );
+
+      //   orgHTML +=
+      //     org !== undefined
+      //       ? `${org.attributes.name}
+      //       ${org.attributes.url}
+      //       ${org.attributes.email}
+      //       `
+      //       : "";
+      // });
+      
+
+
 
       $("#results-list").append(`
-    <div class="card"  data-thumbnail="${result.attributes.pictureThumbnailUrl}" data-name="${result.attributes.name}" data-breed="${result.attributes.breedPrimary}" data-age="${result.attributes.ageGroup}">
+    <div class="card" data-orgs="${orgHTML}" data-pictures="${pictureHTML}" data-description="${result.attributes.descriptionText}" data-name="${result.attributes.name}" data-breed="${result.attributes.breedPrimary}" data-age="${result.attributes.ageGroup}">
         <img class="card-image" src="${result.attributes.pictureThumbnailUrl}" />
         <div class="card-container">
           <h4>${result.attributes.name} </h4>
           <p>${result.attributes.breedPrimary}</p>
-          <p>${result.attributes.ageGroup}</p>
-          <p>${result.attributes.sex}</p>
-          <p>${result.attributes.sizeGroup}</p>
+          <p class="age-size">${result.attributes.ageGroup} </p>
+          <p class="age-size">${result.attributes.sex}</p>
+          <p class="age-size">${result.attributes.sizeGroup}</p>
+          
+         
         
         </div>
     </div>`);
@@ -121,6 +167,8 @@ function getAnimals(
   const field =
     "distance,ageGroup,breedString,breedPrimary,descriptionText,activityLevel,coatLength,isCurrentVaccinations,isDogsOk,isKidsOk,newPeopleReaction,ownerExperience,sizeGroup,isSpecialNeeds,name,videoCount,VideoUrlCount,pictureCount,pictureThumbnailUrl,sex,adoptionFeeString,isCatsOk,sizeCurrent,sizePotential,url";
 
+  // const limits = "&limit=250";
+  // let pageNum = "&page=1";
   const url = searchURL + field;
 
   console.log(url);
@@ -137,28 +185,19 @@ function getAnimals(
     });
 }
 
-function watchForm(animalType) {
+function watchForm() {
   $("form").submit((event) => {
     event.preventDefault();
+
+    console.log("form was submitted", animalType);
 
     const searchGender = $("#search-gender").val();
     const searchZip = $("#search-zip").val();
     const searchMiles = $("#search-miles").val();
     const searchAge = $("#search-age").val();
-    let searchSize = "";
-    let searchBreed = "";
+    let searchSize = $(`#search-size-${animalType}`).val();
+    let searchBreed = $(`#search-breed-${animalType}`).val();
 
-
-    if (animalType === "Dog") {
-  
-
-   searchSize = $("#search-size-dog").val();
-   searchBreed = $("#search-breed-dog").val();
-} else {
-  searchSize = $("#search-size-cat").val();
-  searchBreed = $("#search-breed-cat").val();
-}
-   
     getAnimals(
       animalType,
       searchGender,
@@ -178,8 +217,8 @@ function displayForm() {
     $(".forms").show();
     $(".show-dog").show();
     $(".show-cat").hide();
-    animalType = "Dog";
-    watchForm(animalType);
+    animalType = "dog";
+    //watchForm(animalType);
   });
 
   $(".cat-pic").click(function (e) {
@@ -188,33 +227,11 @@ function displayForm() {
     $(".forms").show();
     $(".show-dog").hide();
     $(".show-cat").show();
-    animalType = "Cat";
-    watchForm(animalType);
+    animalType = "cat";
+    //watchForm(animalType);
   });
 
-  // $("#modal .close").click(function (e) {
-  //   e.preventDefault();
-  //   $("#overlay").fadeOut();
-  //   $("#modal").fadeOut();
-  // });
-
-  // $("#overlay").click(function () {
-  //   $("#overlay").fadeOut();
-  //   $("#modal").fadeOut();
-  // });
-
-  // $("#results-list").on("click", ".card", function () {
-  //   let name = $(this).data("name");
-  //   let thumbnail = $(this).data("thumbnail");
-  //   let breed = $(this).data("breed");
-  //   let age = $(this).data("age");
-  //   $("#modal h2").text(name);
-  //   $("#modal img").attr("src", thumbnail);
-  //   $("#modal p.breed").text(breed);
-  //   $("#modal p.age").text(age);
-  //   $("#overlay").fadeIn();
-  //   $("#modal").fadeIn();
-  // });
+  watchForm();
 }
 
 $("#modal .close").click(function (e) {
@@ -230,22 +247,32 @@ $("#overlay").click(function () {
 
 $("#results-list").on("click", ".card", function () {
   let name = $(this).data("name");
-  let thumbnail = $(this).data("thumbnail");
   let breed = $(this).data("breed");
   let age = $(this).data("age");
+  let org = $(this).data("orgs").split(",");
+  let pics = $(this).data("pictures").split(",");
+  let description = $(this).data("description");
 
-  // let pics = $(this).data("pics");
   $("#modal h2").text(name);
-  $("#modal img").attr("src", thumbnail);
-  // $("#modal img").attr("src", pics);
+  $("#modal .additional-images").html("");
+  pics.forEach(function (picture) {
+    $("#modal .additional-images").append(
+      `<img src="${picture}" class="additional-images"/>`
+    );
+  });
+  $("#modal p.org-name").text(org[0]);
+  $("#modal p.org-email").text(org[1]);
+  $("#modal p.org-url").text(org[2]);
   $("#modal p.breed").text(breed);
   $("#modal p.age").text(age);
+  $("#modal p.description").text(description);
+  // $("#modal p.org").text(org);
   $("#overlay").fadeIn();
   $("#modal").fadeIn();
 });
 
 // Event listener to start new search
-$(".search-again").click(function (e) {
+$("body").on("click", ".search-again", function (e) {
   e.preventDefault();
   $(".forms").hide();
   $("#results").addClass("hidden");

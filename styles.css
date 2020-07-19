@@ -24,9 +24,19 @@ body {
   height: auto;
 } */
 
+h1 {
+  font-size: 56px;
+  color: white;
+}
+
 h2 {
   text-align: center;
   margin: 20px;
+}
+
+.header-pic {
+  width: 200px;
+  margin-top: 10px;
 }
 
 .main-header {
@@ -53,7 +63,7 @@ h2 {
 }
 
 .splash {
-  text-align: center;
+  /* text-align: center; */
   margin: 20px;
   font-size: 22px;
 }
@@ -75,6 +85,10 @@ h2 {
 .buddy-type {
   display: flex;
   justify-content: space-evenly;
+}
+
+.buddy {
+  color: white;
 }
 
 .cat-pic {
@@ -141,7 +155,7 @@ h2 {
 
 a {
   text-decoration: none;
-  color: #4d7298;
+  color: #faf2a1;
 }
 
 h2 {
@@ -171,7 +185,7 @@ li {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 5px;
-  width: 200px;
+  width: 300px;
   margin-top: 30px;
   color: #4d7298;
   background-color: #faf2a1;
@@ -184,8 +198,13 @@ li {
 
 .card-container {
   padding: 2px 16px;
+  text-align: center;
 }
 
+.card-container p,
+h4 {
+  margin: 5px 5px;
+}
 /* modal/details */
 
 #overlay {
@@ -200,16 +219,34 @@ li {
 }
 
 #modal {
+  border-radius: 10px;
+
   display: none;
-  padding: 25px;
+
+  width: 75vw;
+  max-width: 100%;
+
+  height: 90vh;
+  max-height: 100%;
   min-height: 50vh;
+
   position: fixed;
+
   z-index: 110;
-  top: 20vh;
-  width: 50%;
-  margin-left: 25%;
-  border-radius: 5px;
   background-color: #fff;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+#modal .additional-images {
+  /* max-width: 45%; */
+  display: inline-block;
+  margin: 10px 5% 10px 0;
+  width: 100%;
+  height: auto;
+  /* padding-left: 50px; */
 }
 
 #modal .close {
@@ -220,4 +257,47 @@ li {
   position: absolute;
   top: 5px;
   right: 15px;
+  z-index: 1;
+}
+
+.age-size {
+  display: inline-block;
+}
+
+.age-size:not(:last-child):after {
+  content: " \00b7";
+}
+
+/* .pet-info {
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+} */
+
+/* .images {
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+} */
+
+.float {
+  width: 50%;
+  float: left;
+  padding: 20px;
+}
+
+.modal-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding: 20px 50px 20px 20px;
 }

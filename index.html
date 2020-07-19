@@ -15,34 +15,30 @@
   <body>
     <header class="main-header">
       
-        <img
-          class="header-image"
-          src="https://via.placeholder.com/500x150.png?text=Picture of dogs and cats"
-        />
+        <a href="#"><img class="header-pic" src="images/Oliver.svg"></a>
+        <h1>Furry Buddies Pet Finder</h1>
         <nav class="main-nav">
           <ul>
-            <li><a href="#">Pet Search</a></li>
-            <li><a href="#">Breed Info</a></li>
-            <li><a href="#">Contact</a></li>
+            <li class="search-again"><a  href="#">Pet Search</a></li>
+            
           </ul>
         </nav>
       
     </header>
     <section class="splash">
-      <h1>Furry Buddies Pet Finder</h1></section>
       <h2 class="buddy">What Kind of Furry Buddy Do You Want?</h2>
       <div class="buddy-type buddy"> 
         
       
-          <a href="#"><img class="dog-pic" src="images/Walter3.jpg"></a>
-          <a href="#"><img class="cat-pic" src="images/Carl2.jpg"></a>
+          <a href="#"><img class="dog-pic" src="images/Walter.svg"></a>
+          <a href="#"><img class="cat-pic" src="images/Carl.svg"></a>
       
       </div>
       
 
       <section class="forms">
         <div class="flex">
-        <div class="pic-dog show-dog"><img class="dog-pic" src="images/Walter3.jpg"></div>
+        <div class="pic-dog show-dog"><img class="dog-pic" src="images/Walter.svg"></div>
         <div class="pic-cat show-cat"><img class="cat-pic" src="images/Carl2.jpg"></div>
         <div class="search-form">
           <form id="search-form">
@@ -99,8 +95,31 @@
               <label for="search-breed-dog"> Breed:</label>
               <select name="search-breed-dog" id="search-breed-dog">
                   <option value=""></option>
-                  <option value="German Shepherd">German Shepherd</option>
-                  <option value="Golden Retriever">Golden Retriever</option>
+                  <option value="Affenpinscher">Affenpinscher</option>
+                  <option value="Afghan Hound">Afghan Hound</option>
+                  <option value="Airedale Terrier">Airedale Terrier</option>
+                  <option value="Akbashd">Akbash</option>
+                  <option value="Akita">Akita</option>
+                  <option value="Alaskan Malamute">Alaskan Malamute</option>
+                  <option value="American Bulldog">American Bulldog</option>
+                  <option value="American Eskimo Dog">American Eskimo Dog</option>
+                  <option value="American Foxhound">American Foxhound</option>
+                  <option value="American Hairless Terrier">American Hairless Terrier</option>
+                  <option value="American Pit Bull Terrier">American Pit Bull Terrier</option>
+                  <option value="American Staffordshire Terrier">American Staffordshire Terrier</option>
+                  <option value="American Water Spaniel">American Water Spaniel</option>
+                  <option value="Anatolian Karabash Dog">Anatolian Karabash Dog</option>
+                  <option value="Anatolian Shepherd">Anatolian Shepherd</option>
+                  <option value="Appenzell Mountain Dog">Appenzell Mountain Dog</option>
+                  <option value="Argentinian Mastiff">Argentinian Mastiff</option>
+                  <option value="Australian Cattle Dog/Blue Heeler">Australian Cattle Dog/Blue Heeler</option>
+                  <option value="Australian Kelpie">Australian Kelpie</option>
+                  <option value="Australian Shepherd">Australian Shepherd</option>
+                  <option value="Australian Terrier">Australian Terrier</option>
+                  <option value="Basenji">Basenji</option>
+                  <option value="Basset Griffon Vendeen">Basset Griffon Vendeen</option>
+                  <option value="Basset Hound">Basset Hound</option>
+                  
                   
               </select>
             </p>
@@ -137,7 +156,7 @@
       </div>
       </section>
 
-
+      <p id="error-message"></p>
       
       <section id="results" class="hidden" >
         <h2>Available Pets</h2>
@@ -147,12 +166,28 @@
 
     </div>
 
-    <section id="modal">
-      <h2>name</h2>
-      <img src=""/>
-      <p class="breed">breed</p>
-      <p class="age">age</p>
-      <a href="#" class="close">x</a>
+    <section class="modal" id="modal">
+       <a href="#" class="close">x</a>
+      <div class="modal-inner">
+        <div class="images float">
+          <img src=""/>
+          <div class="additional-images"></div>
+        </div>
+        <div class="pet-info float">
+          <h2>name</h2>
+          <p class="breed">breed</p>
+          <p class="age">age</p>
+          
+         
+          <p class="description">description</p>
+          <p>Contact Info:</p>
+          <p class="org-name">org name</p>
+          <p class="org-email">org email</p>
+          <p class="org-url">org url</p>
+        </div>
+        
+      </div>
+     
     </section>
     <div id="overlay"></div>
 
