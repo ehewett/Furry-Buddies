@@ -70,6 +70,8 @@ function displayResults(responseJson) {
       //       : "";
       // });
 
+      let size = ${result.attributes.sizeGroup} !== undefined ? ${result.attributes.sizeGroup} : ""; 
+
       $("#results-list").append(`
     <div class="card" data-orgs="${orgHTML}" data-pictures="${pictureHTML}" data-description="${result.attributes.descriptionText}" data-name="${result.attributes.name}" data-breed="${result.attributes.breedPrimary}" data-age="${result.attributes.ageGroup}">
         <img class="card-image" src="${result.attributes.pictureThumbnailUrl}" />
@@ -243,14 +245,16 @@ $("#overlay").click(function () {
 });
 
 $("#results-list").on("click", ".card", function () {
-  let name = $(this).data("name");
-  let breed = $(this).data("breed");
-
+  let name = $(this).data("name") !== "undefined" ? $(this).data("name") : "";
+  let breed =
+    $(this).data("breed") !== "undefined" ? $(this).data("breed") : "";
   let age = $(this).data("age") !== "undefined" ? $(this).data("age") : "";
-
   let org = $(this).data("orgs").split(",");
   let pics = $(this).data("pictures").split(",");
-  let description = $(this).data("description");
+  let description =
+    $(this).data("description") !== "undefined"
+      ? $(this).data("description")
+      : "";
 
   $("#modal h2").text(name);
   $("#modal .additional-images").html("");
@@ -260,12 +264,10 @@ $("#results-list").on("click", ".card", function () {
     );
   });
   $("#modal p.org-name").text(org[0]);
-  $("#modal p.org-email").html(`<a href="mailto:${org[2]}">Email</a>`);
-  $("#modal p.org-url").html(`<a href="${org[3]}" target="_blank">Website</a>`);
+  $("#modal p.org-email").text(org[1]);
+  $("#modal p.org-url").text(org[2]);
   $("#modal p.breed").text(breed);
-
   $("#modal p.age").text(age);
-
   $("#modal p.description").text(description);
   // $("#modal p.org").text(org);
   $("#overlay").fadeIn();
