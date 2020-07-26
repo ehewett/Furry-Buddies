@@ -28,7 +28,7 @@
       
     </header>
     <section class="splash">
-      <divs>Search adoptable dogs and cats from local shelters.</divs>
+      <div  class="tagline">Search adoptable dogs and cats from local shelter and rescue groups.</div >
       <h2 class="buddy">What Kind of Furry Buddy Do You Want?</h2>
       <div class="buddy-type buddy"> 
         
@@ -40,9 +40,9 @@
       
 
       <section class="forms">
-        <div class="flex">
-        <div class="pic-dog show-dog"><img class="dog-pic" src="images/Walter.svg"></div>
-        <div class="pic-cat show-cat"><img class="cat-pic" src="images/Carl.svg"></div>
+        
+        <div class="pic-dog show-dog"><img class="form-dog-pic" src="images/Walter.svg"></div>
+        <div class="pic-cat show-cat"><img class="form-cat-pic" src="images/Carl.svg"></div>
         <div class="search-form">
           <form id="search-form">
 
@@ -146,17 +146,17 @@
             </p>
 
             <p>
-              <label for="search-miles">Search Radius (miles): </label>
+              <label for="search-miles" class="search-miles">Search Radius (miles): </label>
               <input type="number" name="search-miles" id="search-miles" value="50" />
             </p> 
 
-            <p>
+            <p class="submit">
               <input type="submit" value="Find Dogs!" class="submit-dog show-dog" />
               <input type="submit" value="Find Cats!" class="submit-cat show-cat" />
             </p>
           </form>
         </div>
-      </div>
+      
       </section>
 
       <p id="error-message"></p>
@@ -164,7 +164,7 @@
       <section id="results" class="hidden" >
         <h2>Available Pets</h2>
         <div id="results-list"></div>
-       <div class="search-again container">Search Again</div>
+       <div class="search-again button">Search Again</div>
       </section>
 
     </div>
