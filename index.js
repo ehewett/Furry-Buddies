@@ -252,13 +252,13 @@ $("#results-list").on("click", ".card", function () {
   let pics = $(this).data("pictures").split(",");
   let description = $(this).data("description");
 
-  $("#modal h2").text(name);
   $("#modal .additional-images").html("");
   pics.forEach(function (picture) {
     $("#modal .additional-images").append(
       `<img src="${picture}" class="additional-images"/>`
     );
   });
+  $("#modal h2").text(name);
   $("#modal p.org-name").text(org[0]);
   $("#modal p.org-email").html(`<a href="mailto:${org[2]}">Email</a>`);
   $("#modal p.org-url").html(`<a href="${org[3]}" target="_blank">Website</a>`);
@@ -268,6 +268,7 @@ $("#results-list").on("click", ".card", function () {
 
   $("#modal p.description").text(description);
   // $("#modal p.org").text(org);
+
   $("#overlay").fadeIn();
   $("#modal").fadeIn();
 });

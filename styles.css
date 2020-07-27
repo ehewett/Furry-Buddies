@@ -288,13 +288,13 @@ h4 {
 
   display: none;
 
-  width: 75vw;
-  max-width: 100%;
+  width: 90%;
+  /* max-width: 100%; */
 
   height: 90vh;
-  max-height: 100%;
+  /* max-height: 100%; */
   min-height: 50vh;
-
+  color: #4d7298;
   position: fixed;
 
   z-index: 110;
@@ -303,6 +303,13 @@ h4 {
   top: 50%;
 
   transform: translate(-50%, -50%);
+}
+
+.overflow {
+  border: 1px solid blue;
+  width: 198px;
+  overflow-y: auto;
+  height: 100%;
 }
 
 #modal .additional-images {
@@ -325,44 +332,49 @@ h4 {
   z-index: 1;
 }
 
+.modal-inner {
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; */
+  padding: 20px 50px 20px 20px;
+  display: flex;
+}
+
+.pet-info {
+  overflow-y: auto;
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; */
+  flex: 1;
+  padding-left: 10px;
+}
+
+.images {
+  overflow: auto;
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; */
+  flex: 1;
+  padding-right: 10px;
+}
+
+/* .float {
+  width: 50%;
+  float: left;
+  padding: 20px;
+} */
+
 .age-size {
   display: inline-block;
 }
 
 .age-size:not(:last-child):after {
   content: " \00b7";
-}
-
-/* .pet-info {
-  overflow: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-} */
-
-/* .images {
-  overflow: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-} */
-
-.float {
-  width: 50%;
-  float: left;
-  padding: 20px;
-}
-
-.modal-inner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  padding: 20px 50px 20px 20px;
 }
