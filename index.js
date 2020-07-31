@@ -56,29 +56,28 @@ function displayResults(responseJson) {
         orgHTML.push("No Info Available");
       }
 
-      // result.relationships.orgs.data.forEach((orgObj) => {
-      //   const org = included.find(
-      //     (inc) => inc.id === orgObj.id && inc.type === "orgs"
-      //   );
-
-      //   orgHTML +=
-      //     org !== undefined
-      //       ? `${org.attributes.name}
-      //       ${org.attributes.url}
-      //       ${org.attributes.email}
-      //       `
-      //       : "";
-      // });
-
       $("#results-list").append(`
-    <div class="card" data-orgs="${orgHTML}" data-pictures="${pictureHTML}" data-description="${result.attributes.descriptionText}" data-name="${result.attributes.name}" data-breed="${result.attributes.breedPrimary}" data-age="${result.attributes.ageGroup}">
-        <img class="card-image" src="${result.attributes.pictureThumbnailUrl}" />
+    <div class="card" data-orgs="${orgHTML}" data-pictures="${pictureHTML}" data-description="${
+        result.attributes.descriptionText
+      }" data-name="${result.attributes.name}" data-breed="${
+        result.attributes.breedPrimary
+      }" data-sex="${result.attributes.sex}" data-size=" 
+    ${result.attributes.sizeGroup}" data-age="${result.attributes.ageGroup}">
+        <img class="card-image" src="${
+          result.attributes.pictureThumbnailUrl
+        }" />
         <div class="card-container">
           <h4>${result.attributes.name} </h4>
           <p>${result.attributes.breedPrimary}</p>
-          <p class="age-size">${result.attributes.ageGroup} </p>
-          <p class="age-size">${result.attributes.sex}</p>
-          <p class="age-size">${result.attributes.sizeGroup}</p>
+          <p class="age-size">${
+            result.attributes.ageGroup ? result.attributes.ageGroup : ""
+          } </p>
+          <p class="age-size">${
+            result.attributes.sex ? result.attributes.sex : ""
+          }</p>
+          <p class="age-size">${
+            result.attributes.sizeGroup ? result.attributes.sizeGroup : ""
+          }</p>
           
          
         
@@ -245,9 +244,9 @@ $("#overlay").click(function () {
 $("#results-list").on("click", ".card", function () {
   let name = $(this).data("name");
   let breed = $(this).data("breed");
-
+  let size = $(this).data("size") !== "undefined" ? $(this).data("size") : "";
+  let sex = $(this).data("sex") !== "undefined" ? $(this).data("sex") : "";
   let age = $(this).data("age") !== "undefined" ? $(this).data("age") : "";
-
   let org = $(this).data("orgs").split(",");
   let pics = $(this).data("pictures").split(",");
   let description = $(this).data("description");
@@ -258,16 +257,17 @@ $("#results-list").on("click", ".card", function () {
       `<img src="${picture}" class="additional-images"/>`
     );
   });
+
   $("#modal h2").text(name);
+  $("#modal p.breed").text(breed);
+  $("#modal li.age").text(age);
+  $("#modal li.sex").text(sex);
+  $("#modal li.size").text(size);
+
+  $("#modal p.description").text(description);
   $("#modal p.org-name").text(org[0]);
   $("#modal p.org-email").html(`<a href="mailto:${org[2]}">Email</a>`);
   $("#modal p.org-url").html(`<a href="${org[3]}" target="_blank">Website</a>`);
-  $("#modal p.breed").text(breed);
-
-  $("#modal p.age").text(age);
-
-  $("#modal p.description").text(description);
-  // $("#modal p.org").text(org);
 
   $("#overlay").fadeIn();
   $("#modal").fadeIn();

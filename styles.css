@@ -4,6 +4,12 @@
   padding: 0px;
 }
 
+input:focus,
+select:focus,
+button:focus {
+  outline: none;
+}
+
 body {
   background-color: #4d7298;
   color: white;
@@ -84,13 +90,14 @@ h1 {
 
 .button {
   background-color: #f4d35e;
-  margin: 20px 60px;
+  margin: 20px 50%;
   height: 40px;
   border-style: none;
   border-radius: 25px;
   color: #4d7298;
   padding-top: 5px;
   border-bottom: 5px solid #d1b358;
+  width: 160px;
 }
 
 .button:hover {
@@ -147,18 +154,22 @@ p label {
 /* .search-miles {
   margin-right: 26px;
 } */
+
 /* .flex {
   display: flex;
-  justify-content: space-evenly;
 } */
-
-#search-form p {
-  display: flex;
-}
 
 #search-form select,
 input {
   flex: 1;
+}
+
+.submit {
+  width: 250px;
+}
+
+.submit-button {
+  width: 250px;
 }
 
 .submit input {
@@ -184,6 +195,7 @@ input {
 
 .search-form p {
   margin: 10px;
+  display: flex;
 }
 
 .search-breed-cat {
@@ -233,6 +245,10 @@ li {
   border-radius: 5px;
   margin: 10px auto;
   display: block;
+}
+
+#results h2 {
+  margin-top: 25px;
 }
 
 #results-list {
@@ -285,23 +301,16 @@ h4 {
 
 #modal {
   border-radius: 10px;
-
   display: none;
-
   width: 90%;
-  /* max-width: 100%; */
-
   height: 90vh;
-  /* max-height: 100%; */
   min-height: 50vh;
   color: #4d7298;
   position: fixed;
-
   z-index: 110;
   background-color: #fff;
   left: 50%;
   top: 50%;
-
   transform: translate(-50%, -50%);
 }
 
@@ -314,11 +323,12 @@ h4 {
 
 #modal .additional-images {
   /* max-width: 45%; */
-  display: inline-block;
-  margin: 10px 5% 10px 0;
+  /* display: inline-block; */
+  /* margin: 10px 5% 10px 0; */
   width: 100%;
   height: auto;
   /* padding-left: 50px; */
+  margin-top: 10px;
 }
 
 #modal .close {
@@ -333,48 +343,168 @@ h4 {
 }
 
 .modal-inner {
-  /* position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto; */
   padding: 20px 50px 20px 20px;
   display: flex;
+  flex-direction: column;
+  overflow: auto;
+  max-height: 700px;
 }
 
 .pet-info {
-  overflow-y: auto;
+  /* overflow: auto; */
   /* position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%; */
+  width: 100%; */
+  /* max-height: 700px; */
   flex: 1;
   padding-left: 10px;
 }
 
 .images {
-  overflow: auto;
+  /* overflow: auto; */
   /* position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%; */
+  width: 100%; */
+  /* max-height: 700px; */
   flex: 1;
   padding-right: 10px;
 }
 
-/* .float {
-  width: 50%;
-  float: left;
-  padding: 20px;
-} */
+.breed,
+.age,
+.sex,
+.size {
+  font-weight: 600;
+}
+
+ul {
+  list-style-type: square;
+}
+
+.pet-info ul li {
+  display: inline;
+}
+
+.pet-info a:link {
+  text-decoration: none;
+  cursor: pointer;
+  color: #4d7298;
+  font-weight: 500;
+}
+
+.pet-info a:visited {
+  color: #4d7298;
+}
+
+.pet-info a:hover {
+  font-size: 18px;
+}
+
+.contact {
+  text-align: left;
+  font-weight: 600;
+}
+
+.org-name,
+.org-url,
+.org-email {
+  text-align: left;
+}
 
 .age-size {
   display: inline-block;
 }
 
 .age-size:not(:last-child):after {
-  content: " \00b7";
+  /*content: " \00b7";*/
+}
+
+.description {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+span {
+  font-weight: 600;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .modal-inner {
+    padding: 20px 50px 20px 20px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .pet-info {
+    overflow: auto;
+    max-height: 700px;
+    flex: 1;
+    padding-left: 10px;
+  }
+
+  .images {
+    overflow: auto;
+    max-height: 700px;
+    flex: 1;
+    padding-right: 10px;
+  }
+
+  #search-form {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  .main-nav a {
+    font-size: 14px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  #search-form {
+    padding-left: 30%;
+    padding-right: 30%;
+  }
+
+  .tagline {
+    font-size: 16px;
+  }
+
+  .main-nav a {
+    font-size: 14px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  #search-form {
+    padding-left: 35%;
+    padding-right: 35%;
+  }
+
+  .tagline {
+    font-size: 18px;
+  }
+  .main-nav a {
+    font-size: 16px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  #search-form {
+    padding-left: 40%;
+    padding-right: 40%;
+  }
+
+  .header-pic {
+    max-width: 300px;
+    margin-top: 10px;
+    margin-left: 5px;
+    /* width: 60%; */
+  }
 }

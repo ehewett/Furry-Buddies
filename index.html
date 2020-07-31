@@ -82,7 +82,7 @@
             </select>
           </p>
 
-          <p>
+          <p class="flex">
             <label for="search-gender"> Gender:</label>
             <select name="search-gender" id="search-gender">
               <option value=""></option>
@@ -165,17 +165,20 @@
             />
           </p>
 
-          <p class="submit">
+          <p class="submit-button">
+            <p class="submit">
             <input
               type="submit"
               value="Find Dogs!"
               class="submit-dog show-dog"
-            />
+            /></p>
+            <p class="submit">
+
             <input
               type="submit"
               value="Find Cats!"
               class="submit-cat show-cat"
-            />
+            /></p>
           </p>
         </form>
       </div>
@@ -201,10 +204,14 @@
         <div class="pet-info">
           <h2>name</h2>
           <p class="breed">breed</p>
-          <p class="age">age</p>
+          <ul class="pet">
+            <li class="age">age</li>
+            <li class="sex">sex</li>
+            <li class="size">size</li>
+          </ul>
 
           <p class="description">description</p>
-          <p>Contact Info:</p>
+          <p class="contact">Contact Info:</p>
           <p class="org-name">org name</p>
           <p class="org-email">org email</p>
           <p class="org-url">org url</p>
