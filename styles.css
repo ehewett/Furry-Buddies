@@ -50,7 +50,7 @@ h1 {
   background-color: white;
   /* width: 100%; */
   color: #4d7298;
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 5px;
 }
 
@@ -90,7 +90,7 @@ h1 {
 
 .button {
   background-color: #f4d35e;
-  margin: 20px 50%;
+  /* margin: 20px 50%; */
   height: 40px;
   border-style: none;
   border-radius: 25px;
@@ -98,6 +98,7 @@ h1 {
   padding-top: 5px;
   border-bottom: 5px solid #d1b358;
   width: 160px;
+  margin: 20px auto;
 }
 
 .button:hover {
@@ -165,23 +166,24 @@ input {
 }
 
 .submit {
-  width: 250px;
+  /* width: 250px; */
 }
 
 .submit-button {
-  width: 250px;
+  /* width: 250px; */
 }
 
 .submit input {
   background-color: #f4d35e;
-  margin: 20px 60px;
+  margin: 20px auto;
   height: 40px;
   border-style: none;
   border-radius: 25px;
   color: #4d7298;
-
   border-bottom: 5px solid #d1b358;
 }
+
+
 
 .submit input:hover {
   font-size: 20px;
@@ -274,7 +276,8 @@ li {
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+
+  transform: translate3D(0, -1px, 0) scale(1.03);
 }
 
 .card-container {
@@ -471,7 +474,7 @@ span {
   }
 
   .tagline {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .main-nav a {
@@ -487,7 +490,7 @@ span {
   }
 
   .tagline {
-    font-size: 18px;
+    font-size: 22px;
   }
   .main-nav a {
     font-size: 16px;
