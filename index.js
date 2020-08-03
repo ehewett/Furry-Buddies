@@ -5,10 +5,9 @@ let animalType = "";
 
 function displayResults(responseJson) {
   // if there are previous results, remove them
-  console.log(responseJson);
+
   $("#results-list").empty();
   if (responseJson.meta.count == 0) {
-    console.log(responseJson.meta.count);
     $("#results-list")
       .append(`<h2>No furry buddies found. Please try a different search.</h2>
       `);
@@ -99,7 +98,6 @@ function getAnimals(
   searchSize,
   searchBreed
 ) {
-  console.log(animalType);
   const raw = {
     data: {
       filters: [],
@@ -165,7 +163,6 @@ function getAnimals(
 
   const url = searchURL + field;
 
-  console.log(url);
   fetch(url, options)
     .then((response) => {
       if (response.ok) {
@@ -182,8 +179,6 @@ function getAnimals(
 function watchForm() {
   $("form").submit((event) => {
     event.preventDefault();
-
-    console.log("form was submitted", animalType);
 
     const searchGender = $("#search-gender").val();
     const searchZip = $("#search-zip").val();
