@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0px;
+  font-family: "Poppins", sans-serif;
 }
 
 input:focus,
@@ -14,24 +15,15 @@ body {
   background-color: #4d7298;
   color: white;
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
+
   min-height: 100vh;
   flex-direction: column;
   text-align: center;
   font-family: "Poppins", sans-serif;
 }
 
-/* img {
-  max-width: 100%;
-  height: auto;
-} */
-
 h1 {
   font-size: 22px;
-  /* color: #f4d35e; */
-  /* color: #ccfbfe; */
-  /* color: #92dce5; */
   color: #42f2f7;
 }
 
@@ -48,7 +40,6 @@ h1 {
 
 .tagline {
   background-color: white;
-  /* width: 100%; */
   color: #4d7298;
   font-size: 16px;
   border-radius: 5px;
@@ -58,7 +49,6 @@ h1 {
   max-width: 200px;
   margin-top: 10px;
   margin-left: 5px;
-  /* width: 60%; */
 }
 
 .main-header {
@@ -90,15 +80,15 @@ h1 {
 
 .button {
   background-color: #f4d35e;
-  /* margin: 20px 50%; */
   height: 40px;
   border-style: none;
   border-radius: 25px;
   color: #4d7298;
   padding-top: 5px;
-  border-bottom: 5px solid #d1b358;
+  border-bottom: 5px solid #b59430;
   width: 160px;
-  margin: 20px auto;
+  margin: 40px auto;
+  font-weight: 500;
 }
 
 .button:hover {
@@ -107,7 +97,6 @@ h1 {
 
 .buddy-type {
   display: flex;
-  /* justify-content: space-evenly; */
 }
 
 .buddy-type a {
@@ -152,25 +141,9 @@ p label {
   margin-right: 15px;
 }
 
-/* .search-miles {
-  margin-right: 26px;
-} */
-
-/* .flex {
-  display: flex;
-} */
-
 #search-form select,
 input {
   flex: 1;
-}
-
-.submit {
-  /* width: 250px; */
-}
-
-.submit-button {
-  /* width: 250px; */
 }
 
 .submit input {
@@ -180,10 +153,12 @@ input {
   border-style: none;
   border-radius: 25px;
   color: #4d7298;
-  border-bottom: 5px solid #d1b358;
+  border-bottom: 5px solid #b59430;
 }
 
-
+input {
+  font-weight: 500;
+}
 
 .submit input:hover {
   font-size: 20px;
@@ -251,6 +226,7 @@ li {
 
 #results h2 {
   margin-top: 25px;
+  color: #42f2f7;
 }
 
 #results-list {
@@ -266,10 +242,7 @@ li {
   width: 300px;
   margin-top: 30px;
   color: #4d7298;
-  /* background-color: #faf2a1; */
   background-color: #f4d35e;
-
-  /* background-color: #f4d35e; */
 
   cursor: pointer;
 }
@@ -289,6 +262,7 @@ li {
 h4 {
   margin: 5px 5px;
 }
+
 /* modal/details */
 
 #overlay {
@@ -325,12 +299,8 @@ h4 {
 }
 
 #modal .additional-images {
-  /* max-width: 45%; */
-  /* display: inline-block; */
-  /* margin: 10px 5% 10px 0; */
   width: 100%;
   height: auto;
-  /* padding-left: 50px; */
   margin-top: 10px;
 }
 
@@ -354,25 +324,13 @@ h4 {
 }
 
 .pet-info {
-  /* overflow: auto; */
-  /* position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; */
-  /* max-height: 700px; */
   flex: 1;
-  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .images {
-  /* overflow: auto; */
-  /* position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; */
-  /* max-height: 700px; */
   flex: 1;
-  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .breed,
@@ -390,11 +348,19 @@ ul {
   display: inline;
 }
 
+.pet-info a {
+  color: #4d7298;
+}
+
+.org-email,
+.org-url a {
+  margin-top: 5px;
+}
+
 .pet-info a:link {
   text-decoration: none;
   cursor: pointer;
   color: #4d7298;
-  font-weight: 500;
 }
 
 .pet-info a:visited {
@@ -408,20 +374,25 @@ ul {
 .contact {
   text-align: left;
   font-weight: 600;
+  padding-bottom: 5px;
 }
 
 .org-name,
 .org-url,
 .org-email {
   text-align: left;
+  padding-bottom: 5px;
+}
+
+.org-url,
+.org-email {
+  color: #4d7298;
+  font-weight: 600;
+  font-style: italic;
 }
 
 .age-size {
   display: inline-block;
-}
-
-.age-size:not(:last-child):after {
-  /*content: " \00b7";*/
 }
 
 .description {
@@ -446,14 +417,14 @@ span {
     overflow: auto;
     max-height: 700px;
     flex: 1;
-    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .images {
     overflow: auto;
     max-height: 700px;
     flex: 1;
-    padding-right: 10px;
+    padding-left: 10px;
   }
 
   #search-form {
@@ -508,6 +479,5 @@ span {
     max-width: 300px;
     margin-top: 10px;
     margin-left: 5px;
-    /* width: 60%; */
   }
 }

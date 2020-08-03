@@ -16,7 +16,7 @@ function displayResults(responseJson) {
     // iterate through the data array
     for (let i = 0; i < responseJson.data.length; i++) {
       let pictureHTML = [];
-      // let orgHTML = "";
+
       let orgHTML = [];
       let included = responseJson.included;
       let result = responseJson.data[i];
@@ -103,7 +103,7 @@ function getAnimals(
   const raw = {
     data: {
       filters: [],
-      // filterProcessing: "1 and 2",
+
       filterRadius: {
         miles: searchMiles,
         postalcode: searchZip,
@@ -163,8 +163,6 @@ function getAnimals(
   const field =
     "distance,ageGroup,breedString,breedPrimary,descriptionText,activityLevel,coatLength,isCurrentVaccinations,isDogsOk,isKidsOk,newPeopleReaction,ownerExperience,sizeGroup,isSpecialNeeds,name,videoCount,VideoUrlCount,pictureCount,pictureThumbnailUrl,sex,adoptionFeeString,isCatsOk,sizeCurrent,sizePotential,url";
 
-  // const limits = "&limit=250";
-  // let pageNum = "&page=1";
   const url = searchURL + field;
 
   console.log(url);
@@ -214,7 +212,6 @@ function displayForm() {
     $(".show-dog").show();
     $(".show-cat").hide();
     animalType = "dog";
-    //watchForm(animalType);
   });
 
   $(".cat-pic").click(function (e) {
@@ -224,12 +221,12 @@ function displayForm() {
     $(".show-dog").hide();
     $(".show-cat").show();
     animalType = "cat";
-    //watchForm(animalType);
   });
 
   watchForm();
 }
 
+// Disaplys modal window
 $("#modal .close").click(function (e) {
   e.preventDefault();
   $("#overlay").fadeOut();
