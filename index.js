@@ -32,7 +32,7 @@ function displayResults(responseJson) {
       }
 
       if (!pictureHTML.length) {
-        pictureHTML.push("https://placeholder.com/50x50");
+        pictureHTML.push("images/logo-lg.png");
       }
 
       if (result.relationships.orgs) {
@@ -64,6 +64,8 @@ function displayResults(responseJson) {
     ${result.attributes.sizeGroup}" data-age="${result.attributes.ageGroup}">
         <img class="card-image" src="${
           result.attributes.pictureThumbnailUrl
+            ? result.attributes.pictureThumbnailUrl
+            : "images/logo.png"
         }" />
         <div class="card-container">
           <h4>${result.attributes.name} </h4>
@@ -236,12 +238,24 @@ $("#overlay").click(function () {
 $("#results-list").on("click", ".card", function () {
   let name = $(this).data("name");
   let breed = $(this).data("breed");
-  let size = $(this).data("size") !== "undefined" ? $(this).data("size") : "";
-  let sex = $(this).data("sex") !== "undefined" ? $(this).data("sex") : "";
-  let age = $(this).data("age") !== "undefined" ? $(this).data("age") : "";
+  let size = !$(this).data("size").includes("undefined")
+    ? $(this).data("size")
+    : "";
+
+  let sex = !$(this).data("sex").includes("undefined")
+    ? $(this).data("sex")
+    : "";
+  let age = !$(this).data("age").includes("undefined")
+    ? $(this).data("age")
+    : "";
   let org = $(this).data("orgs").split(",");
-  let pics = $(this).data("pictures").split(",");
-  let description = $(this).data("description");
+  let pics = !$(this).data("pictures").includes("undefined")
+    ? $(this).data("pictures").split(",")
+    : "";
+
+  let description = !$(this).data("description").includes("undefined")
+    ? $(this).data("description")
+    : "";
 
   $("#modal .additional-images").html("");
   pics.forEach(function (picture) {
