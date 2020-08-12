@@ -338,7 +338,7 @@ div .additional-images {
   top: 5px;
   right: 10px;
   z-index: 1;
-  background-color: green;
+  background-color: red;
   border-radius: 50%;
   padding: 0 10px 3px;
 }

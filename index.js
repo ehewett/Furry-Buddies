@@ -9,7 +9,7 @@ function displayResults(responseJson) {
   $("#results-list").empty();
   if (responseJson.meta.count == 0) {
     $("#results-list")
-      .append(`<h2>No furry buddies found. Please try a different searchh.</h2>
+      .append(`<h2>No furry buddies found. Please try a different search.</h2>
       `);
   } else {
     // iterate through the data array
