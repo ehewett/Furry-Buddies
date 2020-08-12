@@ -18,42 +18,65 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&family=Ranchers&display=swap"
       rel="stylesheet"
     />
-  
   </head>
   <body>
     <header class="main-header">
       <a href="index.html"
-        ><img class="header-pic" src="images/Oliverlogo.png"
+        ><img
+          class="header-pic"
+          src="images/Oliverlogo.png"
+          alt="Logo of Furry Friends Pet Finder"
       /></a>
 
       <nav class="main-nav">
-        <a href="#" class="search-again">Pet Search</a>
+        <a href="#" class="search-again">Home</a>
       </nav>
     </header>
     <section class="splash">
-      <div class="tagline">
+      <h1 class="tagline">
         Search adoptable dogs and cats from local shelters and rescue groups.
-      </div>
+      </h1>
       <h2 class="buddy">What Kind of Furry Buddy Do You Want?</h2>
       <div class="buddy-type buddy">
-        <a href="#"><img class="dog-pic" src="images/Walter.svg" /></a>
-        <a href="#"><img class="cat-pic" src="images/Carl.svg" /></a>
+        <a href="#"
+          ><img
+            class="dog-pic"
+            src="images/Walter.svg"
+            alt="Picture of Walter the Bloodhound"
+        /></a>
+        <a href="#"
+          ><img
+            class="cat-pic"
+            src="images/Carl.svg"
+            alt="Picture of Carl the Cat"
+        /></a>
       </div>
     </section>
 
     <section class="forms">
       <div class="pic-dog show-dog">
-        <img class="form-dog-pic" src="images/Walter.svg" />
+        <img
+          class="form-dog-pic"
+          src="images/Walter.svg"
+          alt="Picture of Walter the Bloodhound"
+        />
       </div>
       <div class="pic-cat show-cat">
-        <img class="form-cat-pic" src="images/Carl.svg" />
+        <img
+          class="form-cat-pic"
+          src="images/Carl.svg"
+          alt="Picture of Carl the Cat"
+        />
       </div>
       <div class="search-form">
         <form id="search-form">
+          <p class="form-description">
+            Leave a field blank to search all animals in that category.
+          </p>
           <p class="search-age">
             <label for="search-age"> Age:</label>
             <select name="search-age" id="search-age">
-              <option value=""></option>
+              <option value="">Select Age...</option>
               <option value="Baby">Baby</option>
               <option value="Young">Young</option>
               <option value="Adult">Adult</option>
@@ -64,7 +87,7 @@
           <p class="search-size-dog show-dog">
             <label for="search-size-dog"> Size:</label>
             <select name="search-size-dog" id="search-size-dog">
-              <option value=""></option>
+              <option value="">Select Size...</option>
               <option value="Small">Small (0-25 lbs)</option>
               <option value="Medium">Medium (26-60 lbs)</option>
               <option value="Large">Large (61-100 lbs)</option>
@@ -75,7 +98,7 @@
           <p class="search-size-cat show-cat">
             <label for="search-size-cat"> Size:</label>
             <select name="search-size-cat" id="search-size-cat">
-              <option value=""></option>
+              <option value="">Select Size..</option>
               <option value="Small">Small (0-6 lbs)</option>
               <option value="Medium">Medium (7-11 lbs)</option>
               <option value="Large">Large (12-16 lbs)</option>
@@ -86,7 +109,7 @@
           <p class="flex">
             <label for="search-gender"> Gender:</label>
             <select name="search-gender" id="search-gender">
-              <option value=""></option>
+              <option value="">Select Gender...</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
@@ -95,7 +118,7 @@
           <p class="search-breed-dog show-dog">
             <label for="search-breed-dog"> Breed:</label>
             <select name="search-breed-dog" id="search-breed-dog">
-              <option value=""></option>
+              <option value="">Select Breed...</option>
               <option value="Affenpinscher">Affenpinscher</option>
               <option value="Afghan Hound">Afghan Hound</option>
               <option value="Airedale Terrier">Airedale Terrier</option>
@@ -132,23 +155,39 @@
               <option value="Australian Shepherd">Australian Shepherd</option>
               <option value="Australian Terrier">Australian Terrier</option>
               <option value="Basenji">Basenji</option>
-              <option value="Basset Griffon Vendeen">Basset Griffon Vendeen</option>
+              <option value="Basset Griffon Vendeen"
+                >Basset Griffon Vendeen</option
+              >
               <option value="Beagle">Beagle</option>
               <option value="Bearded Collie">Bearded Collie</option>
               <option value="Beauceron">Beauceron</option>
               <option value="Bedlington Terrier">Bedlington Terrier</option>
               <option value="Belgian Griffon">Belgian Griffon</option>
-              <option value="Belgian Shepherd Dog Sheepdog">Belgian Shepherd Dog Sheepdog</option>
-              <option value="Belgian Shepherd Laekenois">Belgian Shepherd Laekenois</option>
-              <option value="Belgian Shepherd Malinois">Belgian Shepherd Malinois</option>
-              <option value="Belgian Shepherd Tervuren">Belgian Shepherd Tervuren</option>
+              <option value="Belgian Shepherd Dog Sheepdog"
+                >Belgian Shepherd Dog Sheepdog</option
+              >
+              <option value="Belgian Shepherd Laekenois"
+                >Belgian Shepherd Laekenois</option
+              >
+              <option value="Belgian Shepherd Malinois"
+                >Belgian Shepherd Malinois</option
+              >
+              <option value="Belgian Shepherd Tervuren"
+                >Belgian Shepherd Tervuren</option
+              >
               <option value="Bernese Mountain Dog">Bernese Mountain Dog</option>
               <option value="Bichon Frise">Bichon Frise</option>
               <option value="Biewer">Biewer</option>
-              <option value="Black and Tan Coonhound">Black and Tan Coonhound</option>
-              <option value="Black Labrador Retriever">Black Labrador Retriever</option>
+              <option value="Black and Tan Coonhound"
+                >Black and Tan Coonhound</option
+              >
+              <option value="Black Labrador Retriever"
+                >Black Labrador Retriever</option
+              >
               <option value="Black Mouth Cur">Black Mouth Cur</option>
-              <option value="Black Russian Terrier">Black Russian Terrier</option>
+              <option value="Black Russian Terrier"
+                >Black Russian Terrier</option
+              >
               <option value="Bloodhound">Bloodhound</option>
               <option value="Blue Lacy">Blue Lacy</option>
               <option value="Bluetick Coonhound">Bluetick Coonhound</option>
@@ -175,18 +214,32 @@
               <option value="Cane Corso Mastiff">Cane Corso Mastiff</option>
               <option value="Cardigan Welsh Corgi">Cardigan Welsh Corgi</option>
               <option value="Carolina Dog">Carolina Dog</option>
-              <option value="Catahoula Leopard Dog">Catahoula Leopard Dog</option>
+              <option value="Catahoula Leopard Dog"
+                >Catahoula Leopard Dog</option
+              >
               <option value="Cattle Dog">Cattle Dog</option>
-              <option value="Caucasian Sheepdog (Caucasian Ovtcharka)">Caucasian Sheepdog (Ovtcharka)</option>
-              <option value="Cavalier King Charles Spaniel">Cavalier King Charles Spaniel</option>
-              <option value="Chesapeake Bay Retriever">Chesapeake Bay Retriever</option>
+              <option value="Caucasian Sheepdog (Caucasian Ovtcharka)"
+                >Caucasian Sheepdog (Ovtcharka)</option
+              >
+              <option value="Cavalier King Charles Spaniel"
+                >Cavalier King Charles Spaniel</option
+              >
+              <option value="Chesapeake Bay Retriever"
+                >Chesapeake Bay Retriever</option
+              >
               <option value="Chihuahua">Chihuahua</option>
-              <option value="Chinese Crested-Hairless">Chinese Crested-Hairless</option>
-              <option value="Chinese Crested-Powder Puff">Chinese Crested-Powder Puff</option>
+              <option value="Chinese Crested-Hairless"
+                >Chinese Crested-Hairless</option
+              >
+              <option value="Chinese Crested-Powder Puff"
+                >Chinese Crested-Powder Puff</option
+              >
               <option value="Chinese Foo Dog">Chinese Foo Dog</option>
               <option value="Chinese Shar-Pei">Chinese Shar-Pei</option>
               <option value="Chinook">Chinook</option>
-              <option value="Chocolate Labrador Retriever">Chocolate Labrador Retriever</option>
+              <option value="Chocolate Labrador Retriever"
+                >Chocolate Labrador Retriever</option
+              >
               <option value="Chow Chowr">Chow Chow</option>
               <option value="Cirneco dellEtna">Cirneco dellEtna</option>
               <option value="Clumber Spaniel">Clumber Spaniel</option>
@@ -196,10 +249,14 @@
               <option value="Coonhound">Coonhound</option>
               <option value="Corgi">Corgi</option>
               <option value="Coton de Tulear">Coton de Tulear</option>
-              <option value="Curly-Coated Retriever">Curly-Coated Retriever</option>
+              <option value="Curly-Coated Retriever"
+                >Curly-Coated Retriever</option
+              >
               <option value="Dachshund">Dachshund</option>
               <option value="Dalmatian">Dalmatian</option>
-              <option value="Dandie Dinmont Terrier">Dandie Dinmont Terrier</option>
+              <option value="Dandie Dinmont Terrier"
+                >Dandie Dinmont Terrier</option
+              >
               <option value="Danish Broholmer">Danish Broholmer</option>
               <option value="Deerhound">Deerhound</option>
               <option value="Doberman Pinscher">Doberman Pinscher</option>
@@ -208,7 +265,9 @@
               <option value="Dutch Shepherd">Dutch Shepherd</option>
               <option value="Elkhound">Elkhound</option>
               <option value="English Bulldog">English Bulldog</option>
-              <option value="English Cocker Spaniel">English Cocker Spaniel</option>
+              <option value="English Cocker Spaniel"
+                >English Cocker Spaniel</option
+              >
               <option value="English Coonhound">English Coonhound</option>
               <option value="English Foxhound">English Foxhound</option>
               <option value="English Mastiff">English Mastiff</option>
@@ -216,7 +275,9 @@
               <option value="English Setter">English Setter</option>
               <option value="English Sheepdog">English Sheepdog</option>
               <option value="English Shepherd">English Shepherd</option>
-              <option value="English Springer Spaniel">English Springer Spaniel</option>
+              <option value="English Springer Spaniel"
+                >English Springer Spaniel</option
+              >
               <option value="English Toy Spaniel">English Toy Spaniel</option>
               <option value="Entlebucher">Entlebucher</option>
               <option value="Eskimo Dog">Eskimo Dog</option>
@@ -227,27 +288,41 @@
               <option value="Fila Brasileiro">Fila Brasileiro</option>
               <option value="Finnish Lapphund">Finnish Lapphund</option>
               <option value="Finnish Spitz">Finnish Spitz</option>
-              <option value="Flat-coated Retriever">Flat-coated Retriever</option>
+              <option value="Flat-coated Retriever"
+                >Flat-coated Retriever</option
+              >
               <option value="Fox Terrier">Fox Terrier</option>
               <option value="Foxhound">Foxhound</option>
               <option value="French Brittany">French Brittany</option>
               <option value="French Bulldog">French Bulldog</option>
               <option value="French Mastiff">French Mastiff</option>
-              <option value="Galgo Spanish Greyhoun">Galgo Spanish Greyhoun</option>
+              <option value="Galgo Spanish Greyhoun"
+                >Galgo Spanish Greyhoun</option
+              >
               <option value="German Pinscher">German Pinscher</option>
               <option value="German Shepherd Dog">German Shepherd Dog</option>
-              <option value="German Shorthaired Pointer">German Shorthaired Pointer</option>
+              <option value="German Shorthaired Pointer"
+                >German Shorthaired Pointer</option
+              >
               <option value="German Spitz">German Spitz</option>
-              <option value="German Wirehaired Pointer">German Wirehaired Pointer</option>
+              <option value="German Wirehaired Pointer"
+                >German Wirehaired Pointer</option
+              >
               <option value="Giant Schnauzer">Giant Schnauzer</option>
-              <option value="Glen of Imaal Terrier">Glen of Imaal Terrier</option>
+              <option value="Glen of Imaal Terrier"
+                >Glen of Imaal Terrier</option
+              >
               <option value="Golden Retriever">Golden Retriever</option>
               <option value="Gordon Setter">Gordon Setter</option>
               <option value="Great Dane">Great Dane</option>
               <option value="Great Pyrenees">Great Pyrenees</option>
-              <option value="Greater Swiss Mountain Dog">Greater Swiss Mountain Dog</option>
+              <option value="Greater Swiss Mountain Dog"
+                >Greater Swiss Mountain Dog</option
+              >
               <option value="Greyhound">Greyhound</option>
-              <option value="Halden Hound (Haldenstrover)">Halden Hound (Haldenstrover)</option>
+              <option value="Halden Hound (Haldenstrover)"
+                >Halden Hound (Haldenstrover)</option
+              >
               <option value="Harrier">Harrier</option>
               <option value="Havanese">Havanese</option>
               <option value="Hollandse Tulphond">Hollandse Tulphond</option>
@@ -264,7 +339,9 @@
               <option value="Italian Mastiff">Italian Mastiff</option>
               <option value="Italian Spinone">Italian Spinone</option>
               <option value="Jack Russell Terrier">Jack Russell Terrier</option>
-              <option value="Jack Russell Terrier (Parson Russell Terrier)">Jack Russell (Parson) Terrier</option>
+              <option value="Jack Russell Terrier (Parson Russell Terrier)"
+                >Jack Russell (Parson) Terrier</option
+              >
               <option value="Japanese Chin">Japanese Chin</option>
               <option value="Jindo (Korean)">Jindo (Korean)</option>
               <option value="Kai Dog">Kai Dog</option>
@@ -289,37 +366,51 @@
               <option value="Mastiff">Mastiff</option>
               <option value="McNab">McNab</option>
               <option value="Mexican Hairless">Mexican Hairless</option>
-              <option value="Miniature Bull Terrier">Miniature Bull Terrier</option>
+              <option value="Miniature Bull Terrier"
+                >Miniature Bull Terrier</option
+              >
               <option value="Miniature Pinscher">Miniature Pinscher</option>
               <option value="Miniature Schnauzer">Miniature Schnauzer</option>
               <option value="Mountain Cur">Mountain Cur</option>
               <option value="Mountain Dog">Mountain Dog</option>
               <option value="Munsterlander">Munsterlander</option>
               <option value="Neapolitan Mastiff">Neapolitan Mastiff</option>
-              <option value="New Guinea Singing Dog">New Guinea Singing Dog</option>
+              <option value="New Guinea Singing Dog"
+                >New Guinea Singing Dog</option
+              >
               <option value="Newfoundland Dog">Newfoundland Dog</option>
               <option value="Norfolk Terrier">Norfolk Terrier</option>
               <option value="Norwegian Buhund">Norwegian Buhund</option>
               <option value="Norwegian Elkhound">Norwegian Elkhound</option>
               <option value="Norwegian Lundehund">Norwegian Lundehund</option>
               <option value="Boxer">Norwich Terrier</option>
-              <option value="Nova Scotia Duck-Tolling Retriever">Nova Scotia Duck-Tolling Retriever</option>
+              <option value="Nova Scotia Duck-Tolling Retriever"
+                >Nova Scotia Duck-Tolling Retriever</option
+              >
               <option value="Old English Sheepdog">Old English Sheepdog</option>
               <option value="Otterhound">Otterhound</option>
               <option value="Papillon">Papillon</option>
-              <option value="Parson Russell Terrier">Parson Russell Terrier</option>
-              <option value="Patterdale Terrier (Fell Terrier)">Patterdale Terrier (Fell Terrier)</option>
+              <option value="Parson Russell Terrier"
+                >Parson Russell Terrier</option
+              >
+              <option value="Patterdale Terrier (Fell Terrier)"
+                >Patterdale Terrier (Fell Terrier)</option
+              >
               <option value="Pekingese">Pekingese</option>
               <option value="Pembroke Welsh Corgi">Pembroke Welsh Corgi</option>
               <option value="Boxer">Peruvian Inca Orchid</option>
-              <option value="Petit Basset Griffon Vendeen">Petit Basset Griffon Vendeen</option>
+              <option value="Petit Basset Griffon Vendeen"
+                >Petit Basset Griffon Vendeen</option
+              >
               <option value="Pharaoh Hound">Pharaoh Hound</option>
               <option value="Picardy Shepherd">Picardy Shepherd</option>
               <option value="Pit Bull Terrier">Pit Bull Terrier</option>
               <option value="Plott Hound">Plott Hound</option>
               <option value="Podengo Portugueso">Podengo Portugueso</option>
               <option value="Pointer">Pointer</option>
-              <option value="Polish Lowland Sheepdog">Polish Lowland Sheepdog</option>
+              <option value="Polish Lowland Sheepdog"
+                >Polish Lowland Sheepdog</option
+              >
               <option value="Pomeranian">Pomeranian</option>
               <option value="Poodle (Miniature)">Poodle (Miniature)</option>
               <option value="Poodle (Standard)">Poodle (Standard)</option>
@@ -348,13 +439,17 @@
               <option value="Schipperke">Schipperke</option>
               <option value="Schnauzer">Schnauzer</option>
               <option value="Scottish Deerhound">Scottish Deerhound</option>
-              <option value="Scottish Terrier Scottie">Scottish Terrier Scottie</option>
+              <option value="Scottish Terrier Scottie"
+                >Scottish Terrier Scottie</option
+              >
               <option value="Sealyham Terrier">Sealyham Terrier</option>
               <option value="Setter">Setter</option>
               <option value="Shar Pei">Shar Pei</option>
               <option value="Sheep Dog">Sheep Dog</option>
               <option value="Shepherd">Shepherd</option>
-              <option value="Shetland Sheepdog Sheltie">Shetland Sheepdog Sheltie</option>
+              <option value="Shetland Sheepdog Sheltie"
+                >Shetland Sheepdog Sheltie</option
+              >
               <option value="Shiba Inu">Shiba Inu</option>
               <option value="Shih Tzu">Shih Tzu</option>
               <option value="Siberian Husky">Siberian Husky</option>
@@ -363,14 +458,20 @@
               <option value="Sloughi">Sloughi</option>
               <option value="Smooth Collie">Smooth Collie</option>
               <option value="Smooth Fox Terrier">Smooth Fox Terrier</option>
-              <option value="Soft-Coated Wheaten Terrier">Soft-Coated Wheaten Terrier</option>
-              <option value="South Russian Ovcharka">South Russian Ovcharka</option>
+              <option value="Soft-Coated Wheaten Terrier"
+                >Soft-Coated Wheaten Terrier</option
+              >
+              <option value="South Russian Ovcharka"
+                >South Russian Ovcharka</option
+              >
               <option value="Spaniel">Spaniel</option>
               <option value="Spanish Mastiff">Spanish Mastiff</option>
               <option value="Spinone Italiano">Spinone Italiano</option>
               <option value="Spitz">Spitz</option>
               <option value="Springer Spaniel">Springer Spaniel</option>
-              <option value="Staffordshire Bull Terrier">Staffordshire Bull Terrier</option>
+              <option value="Staffordshire Bull Terrier"
+                >Staffordshire Bull Terrier</option
+              >
               <option value="Sussex Spaniel">Sussex Spaniel</option>
               <option value="Swedish Vallhund">Swedish Vallhund</option>
               <option value="Tamaskan">Tamaskan</option>
@@ -382,30 +483,50 @@
               <option value="Tosa Inu">Tosa Inu</option>
               <option value="Toy Fox Terrier">Toy Fox Terrier</option>
               <option value="Toy Terrier">Toy Terrier</option>
-              <option value="Treeing Walker Coonhound">Treeing Walker Coonhound</option>
+              <option value="Treeing Walker Coonhound"
+                >Treeing Walker Coonhound</option
+              >
               <option value="Vizsla">Vizsla</option>
               <option value="Weimaraner">Weimaraner</option>
               <option value="Welsh Corgi">Welsh Corgi</option>
-              <option value="Welsh Springer Spaniel">Welsh Springer Spaniel</option>
+              <option value="Welsh Springer Spaniel"
+                >Welsh Springer Spaniel</option
+              >
               <option value="Welsh Terrier">Welsh Terrier</option>
-              <option value="West Highland White Terrier Westie">West Highland White Terrier Westie</option>
+              <option value="West Highland White Terrier Westie"
+                >West Highland White Terrier Westie</option
+              >
               <option value="Wheaten Terrier">Wheaten Terrier</option>
               <option value="Whippet">Whippet</option>
-              <option value="White German Shepherd">White German Shepherd</option>
-              <option value="White Swiss Shepherd Dog (Swiss Berger)">White Swiss Shepherd (Swiss Berger)</option>
-              <option value="Wire-haired Pointing Griffon">Wire-haired Pointing Griffon</option>
-              <option value="Wirehaired Fox Terrier">Wirehaired Fox Terrier</option>
+              <option value="White German Shepherd"
+                >White German Shepherd</option
+              >
+              <option value="White Swiss Shepherd Dog (Swiss Berger)"
+                >White Swiss Shepherd (Swiss Berger)</option
+              >
+              <option value="Wire-haired Pointing Griffon"
+                >Wire-haired Pointing Griffon</option
+              >
+              <option value="Wirehaired Fox Terrier"
+                >Wirehaired Fox Terrier</option
+              >
               <option value="Wolf Dog">Wolf Dog</option>
-              <option value="Xoloitzcuintle/Mexican Hairless">Xoloitzcuintle/Mexican Hairless</option>
-              <option value="Yellow Labrador Retriever">Yellow Labrador Retriever</option>
-              <option value="Yorkshire Terrier Yorkie">Yorkshire Terrier Yorkie</option>
+              <option value="Xoloitzcuintle/Mexican Hairless"
+                >Xoloitzcuintle/Mexican Hairless</option
+              >
+              <option value="Yellow Labrador Retriever"
+                >Yellow Labrador Retriever</option
+              >
+              <option value="Yorkshire Terrier Yorkie"
+                >Yorkshire Terrier Yorkie</option
+              >
             </select>
           </p>
 
           <p class="search-breed-cat show-cat">
             <label for="search-breed-cat"> Breed:</label>
             <select name="search-breed-cat" id="search-breed-cat">
-              <option value=""></option>
+              <option value="">Select Breed...</option>
               <option value="Abyssinian">Abyssinian</option>
               <option value="American Curl">American Curl</option>
               <option value="American Shorthair">American Shorthair</option>
@@ -440,7 +561,9 @@
               <option value="European Burmese">European Burmese</option>
               <option value="European Shorthair">European Shorthair</option>
               <option value="Exotic Shorthair">Exotic Shorthair</option>
-              <option value="Extra-Toes Cat (Hemingway Polydactyl)">Extra-Toes Cat (Hemingway Polydactyl)</option>
+              <option value="Extra-Toes Cat (Hemingway Polydactyl)"
+                >Extra-Toes Cat (Hemingway Polydactyl)</option
+              >
               <option value="German Rex">German Rex</option>
               <option value="Havana">Havana</option>
               <option value="Himalayan">Himalayan</option>
@@ -473,7 +596,9 @@
               <option value="Singapura">Singapura</option>
               <option value="Snowshoe">Snowshoe</option>
               <option value="Somali">Somali</option>
-              <option value="Sphynx (hairless cat)">Sphynx (hairless cat)</option>
+              <option value="Sphynx (hairless cat)"
+                >Sphynx (hairless cat)</option
+              >
               <option value="Tabby">Tabby</option>
               <option value="Tiffany">Tiffany</option>
               <option value="Tiger">Tiger</option>
@@ -483,14 +608,19 @@
               <option value="Turkish Angora">Turkish Angora</option>
               <option value="Turkish Van">Turkish Van</option>
               <option value="Tuxedo">Tuxedo</option>
-
             </select>
           </p>
 
           <p>
             <label for="search-zip">Zip Code:</label>
 
-            <input type="text" name="search-zip" id="search-zip" required />
+            <input
+              type="text"
+              name="search-zip"
+              id="search-zip"
+              required
+              placeholder="Required"
+            />
           </p>
 
           <p>
@@ -505,20 +635,21 @@
             />
           </p>
 
-            <p class="submit">
+          <p class="submit">
             <input
               type="submit"
               value="Find Dogs!"
               class="submit-dog show-dog"
-            /></p>
+            />
+          </p>
 
-            <p class="submit">
+          <p class="submit">
             <input
               type="submit"
               value="Find Cats!"
               class="submit-cat show-cat"
-            /></p>
-        
+            />
+          </p>
         </form>
       </div>
     </section>
@@ -528,17 +659,13 @@
     <section id="results" class="hidden">
       <h2>Available Pets</h2>
       <div id="results-list"></div>
-     
-      <div class="search-again button">Search Again</div>
-   
-    </section>
 
-  
+      <div class="search-again button">Search Again</div>
+    </section>
 
     <section id="modal">
       <a href="#" class="close">x</a>
       <div class="modal-inner">
-        
         <div class="pet-info">
           <h2>name</h2>
           <p class="breed">breed</p>
@@ -553,12 +680,13 @@
           <p class="org-name">org name</p>
           <p class="org-email">org email</p>
           <p class="org-url">org url</p>
+          <!-- <div class="additional-images"></div> -->
         </div>
-        <div class="images">
-          <img src="" />
-          <div class="additional-images"></div>
-        </div>
+        <div class="pet-image">pet image</div> 
+        <div class="additional-images"></div>
+
       </div>
+      
     </section>
     <div id="overlay"></div>
 

@@ -59,15 +59,15 @@ h1 {
 
 .main-nav a:link {
   text-decoration: none;
-  color: #f4d35e;
+  color: #42f2f7;
 }
 
 .main-nav a:visited {
-  color: #f4d35e;
+  color: #42f2f7;
 }
 
 .main-nav a:hover {
-  color: #42f2f7;
+  color: white;
 }
 
 .main-nav a {
@@ -185,6 +185,10 @@ input {
   flex-wrap: wrap;
 }
 
+p.form-description {
+  display: inline-block;
+}
+
 .search-breed-cat {
   display: none;
 }
@@ -299,6 +303,7 @@ h4 {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  overflow: auto;
 }
 
 .overflow {
@@ -309,38 +314,57 @@ h4 {
 }
 
 #modal .additional-images {
-  width: 100%;
-  height: auto;
-  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+#modal .additional-images img {
+  flex: 1;
+  max-width: 20%;
+  cursor: pointer;
+}
+
+div .additional-images {
+  padding-bottom: 10px;
 }
 
 #modal .close {
   text-decoration: none;
-  color: #333;
+  color: white;
   font-family: sans-serif;
   font-size: 25px;
   position: absolute;
   top: 5px;
-  right: 15px;
+  right: 10px;
   z-index: 1;
+  background-color: red;
+  border-radius: 50%;
+  padding: 0 10px 3px;
 }
 
 .modal-inner {
-  padding: 20px 50px 20px 20px;
+  padding: 20px;
   display: flex;
+  height: 100%;
   flex-direction: column;
-  overflow: auto;
-  max-height: 700px;
+}
+
+/* .pet-image {
+  display: none;
+} */
+
+.pet-image img {
+  max-width: 600px;
+  min-width: 300px;
 }
 
 .pet-info {
-  flex: 1;
   padding-right: 10px;
+  /* flex: 1; */
 }
 
 .images {
-  flex: 1;
-  padding-left: 10px;
 }
 
 .breed,
@@ -417,25 +441,13 @@ span {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  .modal-inner {
-    padding: 20px 50px 20px 20px;
-    display: flex;
-    flex-direction: row;
-  }
-
-  .pet-info {
-    overflow: auto;
-    max-height: 700px;
+  /* .pet-image {
+    background-size: cover;
+    background-position: center center;
     flex: 1;
-    padding-right: 10px;
-  }
-
-  .images {
-    overflow: auto;
-    max-height: 700px;
-    flex: 1;
-    padding-left: 10px;
-  }
+    text-indent: -9999px;
+    display: block;
+  } */
 
   .main-nav a {
     font-size: 14px;

@@ -62,11 +62,11 @@ function displayResults(responseJson) {
         result.attributes.breedPrimary
       }" data-sex="${result.attributes.sex}" data-size=" 
     ${result.attributes.sizeGroup}" data-age="${result.attributes.ageGroup}">
-        <img class="card-image" src="${
+        <img alt="Pet Picture" class="card-image" src="${
           result.attributes.pictureThumbnailUrl
             ? result.attributes.pictureThumbnailUrl
             : "images/logo.png"
-        }" />
+        } " />
         <div class="card-container">
           <h4>${result.attributes.name} </h4>
           <p>${result.attributes.breedPrimary}</p>
@@ -86,7 +86,8 @@ function displayResults(responseJson) {
     </div>`);
     }
   }
-  //display the results section
+
+  // //display the results section
   $(".forms").hide();
   $("#results").removeClass("hidden");
 }
@@ -201,16 +202,87 @@ function watchForm() {
   });
 }
 
-function displayForm() {
-  $(".dog-pic").click(function (e) {
+// Event listener to start new search
+function newSearch() {
+  $("body").on("click", ".search-again", function (e) {
     e.preventDefault();
-    $(".buddy").hide();
-    $(".forms").show();
-    $(".show-dog").show();
-    $(".show-cat").hide();
-    animalType = "dog";
+    $(".forms").hide();
+    $("#results").addClass("hidden");
+    $(".buddy").show();
+    animalType = "";
+    $("#search-form")[0].reset();
+  });
+}
+
+// Disaplys modal window
+function renderModal() {
+  $("#modal .close").click(function (e) {
+    e.preventDefault();
+    $("#overlay").fadeOut();
+    $("#modal").fadeOut();
   });
 
+  $("#overlay").click(function () {
+    $("#overlay").fadeOut();
+    $("#modal").fadeOut();
+  });
+
+  $("#results-list").on("click", ".card", function () {
+    let name = $(this).data("name");
+    let breed = $(this).data("breed");
+    let size = !$(this).data("size").includes("undefined")
+      ? $(this).data("size")
+      : "";
+
+    let sex = !$(this).data("sex").includes("undefined")
+      ? $(this).data("sex")
+      : "";
+    let age = !$(this).data("age").includes("undefined")
+      ? $(this).data("age")
+      : "";
+    let org = $(this).data("orgs").split(",");
+    let pics = !$(this).data("pictures").includes("undefined")
+      ? $(this).data("pictures").split(",")
+      : "";
+
+    let description = !$(this).data("description").includes("undefined")
+      ? $(this).data("description")
+      : "";
+
+    $("#modal .additional-images").html("");
+    pics.forEach(function (picture) {
+      $("#modal .additional-images").append(
+        `<img src="${picture}" class="additional-image" alt="Pet Picture"/>`
+      );
+    });
+
+    // $("#modal .pet-image").css("background-image", `url("${pics[0]}")`);
+    $("#modal .pet-image").html(`<img src="${pics[0]}"  >`);
+    $("#modal h2").text(name);
+    $("#modal p.breed").text(breed);
+    $("#modal li.age").text(age);
+    $("#modal li.sex").text(sex);
+    $("#modal li.size").text(size);
+
+    $("#modal p.description").text(description);
+    $("#modal p.org-name").text(org[0]);
+    $("#modal p.org-email").html(`<a href="mailto:${org[2]}">Email</a>`);
+    $("#modal p.org-url").html(
+      `<a href="${org[3]}" target="_blank">Website</a>`
+    );
+
+    $("#overlay").fadeIn();
+    $("#modal").fadeIn();
+  });
+
+  $("body").on("click", ".additional-image", function (e) {
+    let src = $(e.target).attr("src");
+    // $(".pet-image").css("background-image", `url("${src}")`);
+    $(" .pet-image").html(`<img src="${src}"  >`);
+  });
+}
+
+function renderCatForm() {
   $(".cat-pic").click(function (e) {
     e.preventDefault();
     $(".buddy").hide();
@@ -219,74 +291,25 @@ function displayForm() {
     $(".show-cat").show();
     animalType = "cat";
   });
-
-  watchForm();
 }
 
-// Disaplys modal window
-$("#modal .close").click(function (e) {
-  e.preventDefault();
-  $("#overlay").fadeOut();
-  $("#modal").fadeOut();
-});
-
-$("#overlay").click(function () {
-  $("#overlay").fadeOut();
-  $("#modal").fadeOut();
-});
-
-$("#results-list").on("click", ".card", function () {
-  let name = $(this).data("name");
-  let breed = $(this).data("breed");
-  let size = !$(this).data("size").includes("undefined")
-    ? $(this).data("size")
-    : "";
-
-  let sex = !$(this).data("sex").includes("undefined")
-    ? $(this).data("sex")
-    : "";
-  let age = !$(this).data("age").includes("undefined")
-    ? $(this).data("age")
-    : "";
-  let org = $(this).data("orgs").split(",");
-  let pics = !$(this).data("pictures").includes("undefined")
-    ? $(this).data("pictures").split(",")
-    : "";
-
-  let description = !$(this).data("description").includes("undefined")
-    ? $(this).data("description")
-    : "";
-
-  $("#modal .additional-images").html("");
-  pics.forEach(function (picture) {
-    $("#modal .additional-images").append(
-      `<img src="${picture}" class="additional-images"/>`
-    );
+function renderDogForm() {
+  $(".dog-pic").click(function (e) {
+    e.preventDefault();
+    $(".buddy").hide();
+    $(".forms").show();
+    $(".show-dog").show();
+    $(".show-cat").hide();
+    animalType = "dog";
   });
+}
 
-  $("#modal h2").text(name);
-  $("#modal p.breed").text(breed);
-  $("#modal li.age").text(age);
-  $("#modal li.sex").text(sex);
-  $("#modal li.size").text(size);
+function main() {
+  renderDogForm();
+  renderCatForm();
+  watchForm();
+  renderModal();
+  newSearch();
+}
 
-  $("#modal p.description").text(description);
-  $("#modal p.org-name").text(org[0]);
-  $("#modal p.org-email").html(`<a href="mailto:${org[2]}">Email</a>`);
-  $("#modal p.org-url").html(`<a href="${org[3]}" target="_blank">Website</a>`);
-
-  $("#overlay").fadeIn();
-  $("#modal").fadeIn();
-});
-
-// Event listener to start new search
-$("body").on("click", ".search-again", function (e) {
-  e.preventDefault();
-  $(".forms").hide();
-  $("#results").addClass("hidden");
-  $(".buddy").show();
-  animalType = "";
-  $("#search-form")[0].reset();
-});
-
-$(displayForm);
+$(main);
