@@ -317,6 +317,7 @@ h4 {
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 #modal .additional-images img {
