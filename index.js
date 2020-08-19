@@ -55,18 +55,27 @@ function displayResults(responseJson) {
         orgHTML.push("No Info Available");
       }
 
+      let description = result.attributes.descriptionText
+        ? result.attributes.descriptionText
+        : "";
+      if (description.includes('"')) {
+        description = description.replace(/"/gi, "");
+        // console.log({ description });
+      }
+
       $("#results-list").append(`
-    <div class="card" data-orgs="${orgHTML}" data-pictures="${pictureHTML}" data-description="${
-        result.attributes.descriptionText
-      }" data-name="${result.attributes.name}" data-breed="${
-        result.attributes.breedPrimary
-      }" data-sex="${result.attributes.sex}" data-size=" 
-    ${result.attributes.sizeGroup}" data-age="${result.attributes.ageGroup}">
-        <img alt="Pet Picture" class="card-image" src="${
-          result.attributes.pictureThumbnailUrl
-            ? result.attributes.pictureThumbnailUrl
-            : "images/logo.png"
-        } " />
+      <div class="card" data-orgs="${orgHTML}" data-pictures="${pictureHTML}" data-description="${description}" data-name="${
+        result.attributes.name
+      }" data-breed="${result.attributes.breedPrimary}" data-sex="${
+        result.attributes.sex
+      }" data-size="
+      ${result.attributes.sizeGroup}" data-age="${result.attributes.ageGroup}">
+          <img class="card-image" src="${
+            result.attributes.pictureThumbnailUrl
+              ? result.attributes.pictureThumbnailUrl
+              : "images/logo.png"
+          }" alt="${result.attributes.name} Photo" />
+     
         <div class="card-container">
           <h4>${result.attributes.name} </h4>
           <p>${result.attributes.breedPrimary}</p>
@@ -86,8 +95,7 @@ function displayResults(responseJson) {
     </div>`);
     }
   }
-
-  // //display the results section
+  //display the results section
   $(".forms").hide();
   $("#results").removeClass("hidden");
 }
@@ -202,6 +210,28 @@ function watchForm() {
   });
 }
 
+function displayForm() {
+  $(".dog-pic").click(function (e) {
+    e.preventDefault();
+    $(".buddy").hide();
+    $(".forms").show();
+    $(".show-dog").show();
+    $(".show-cat").hide();
+    animalType = "dog";
+  });
+
+  $(".cat-pic").click(function (e) {
+    e.preventDefault();
+    $(".buddy").hide();
+    $(".forms").show();
+    $(".show-dog").hide();
+    $(".show-cat").show();
+    animalType = "cat";
+  });
+
+  watchForm();
+}
+
 // Event listener to start new search
 function newSearch() {
   $("body").on("click", ".search-again", function (e) {
@@ -214,7 +244,7 @@ function newSearch() {
   });
 }
 
-// Disaplys modal window
+// Displays modal window
 function renderModal() {
   $("#modal .close").click(function (e) {
     e.preventDefault();
@@ -256,8 +286,9 @@ function renderModal() {
       );
     });
 
-    // $("#modal .pet-image").css("background-image", `url("${pics[0]}")`);
-    $("#modal .pet-image").html(`<img src="${pics[0]}"  >`);
+    $("#modal .pet-image").html(
+      `<img src="${pics[0]}"  alt="${name}'s Main Image for Gallery">`
+    );
     $("#modal h2").text(name);
     $("#modal p.breed").text(breed);
     $("#modal li.age").text(age);
@@ -277,7 +308,6 @@ function renderModal() {
 
   $("body").on("click", ".additional-image", function (e) {
     let src = $(e.target).attr("src");
-    // $(".pet-image").css("background-image", `url("${src}")`);
     $(" .pet-image").html(`<img src="${src}"  >`);
   });
 }

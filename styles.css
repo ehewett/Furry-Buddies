@@ -351,18 +351,17 @@ div .additional-images {
   flex-direction: column;
 }
 
-/* .pet-image {
-  display: none;
-} */
+
 
 .pet-image img {
   max-width: 600px;
-  min-width: 300px;
+  width: 100%;
+  display: none;
 }
 
 .pet-info {
   padding-right: 10px;
-  /* flex: 1; */
+  
 }
 
 .images {
@@ -442,13 +441,9 @@ span {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  /* .pet-image {
-    background-size: cover;
-    background-position: center center;
-    flex: 1;
-    text-indent: -9999px;
-    display: block;
-  } */
+  .pet-image img {
+    display: inline-block;
+  }
 
   .main-nav a {
     font-size: 14px;

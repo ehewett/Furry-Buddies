@@ -632,6 +632,7 @@
               name="search-miles"
               id="search-miles"
               value="50"
+              pattern="[-+]?[0-9]"
             />
           </p>
 
@@ -640,6 +641,7 @@
               type="submit"
               value="Find Dogs!"
               class="submit-dog show-dog"
+              onclick="checkNumbers(document.form1.search-zip)"
             />
           </p>
 
@@ -680,13 +682,10 @@
           <p class="org-name">org name</p>
           <p class="org-email">org email</p>
           <p class="org-url">org url</p>
-          <!-- <div class="additional-images"></div> -->
         </div>
-        <div class="pet-image">pet image</div> 
+        <div class="pet-image">pet image</div>
         <div class="additional-images"></div>
-
       </div>
-      
     </section>
     <div id="overlay"></div>
 
