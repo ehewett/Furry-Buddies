@@ -187,6 +187,14 @@ function getAnimals(
     });
 }
 
+// Limit zip code to 5 digits
+function limitKeypress(event, value, maxLength) {
+  if (value != undefined && value.toString().length >= maxLength) {
+    event.preventDefault();
+  }
+}
+
+
 function watchForm() {
   $("form").submit((event) => {
     event.preventDefault();

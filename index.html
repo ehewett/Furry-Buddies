@@ -615,11 +615,13 @@
             <label for="search-zip">Zip Code:</label>
 
             <input
-              type="text"
+              type="number"
               name="search-zip"
               id="search-zip"
               required
-              placeholder="Required"
+              placeholder="Required - Enter zip code in the format #####" 
+              onkeypress="limitKeypress(event,this.value,5)"
+              oninput="validity.valid||(value='');"
             />
           </p>
 
@@ -632,7 +634,11 @@
               name="search-miles"
               id="search-miles"
               value="50"
-              pattern="[-+]?[0-9]"
+             
+              oninput="validity.valid||(value='');"
+              required
+              min="1"
+              max="6000"
             />
           </p>
 
@@ -640,8 +646,7 @@
             <input
               type="submit"
               value="Find Dogs!"
-              class="submit-dog show-dog"
-              onclick="checkNumbers(document.form1.search-zip)"
+              class="submit-dog show-dog" 
             />
           </p>
 
