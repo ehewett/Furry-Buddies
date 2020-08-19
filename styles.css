@@ -59,15 +59,15 @@ h1 {
 
 .main-nav a:link {
   text-decoration: none;
-  color: #42f2f7;
+  color: white;
 }
 
 .main-nav a:visited {
-  color: #42f2f7;
+  color: white;
 }
 
 .main-nav a:hover {
-  color: white;
+  color: #42f2f7;
 }
 
 .main-nav a {
