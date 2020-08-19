@@ -194,7 +194,6 @@ function limitKeypress(event, value, maxLength) {
   }
 }
 
-
 function watchForm() {
   $("form").submit((event) => {
     event.preventDefault();

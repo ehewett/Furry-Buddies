@@ -351,8 +351,6 @@ div .additional-images {
   flex-direction: column;
 }
 
-
-
 .pet-image img {
   max-width: 600px;
   width: 100%;
@@ -361,7 +359,6 @@ div .additional-images {
 
 .pet-info {
   padding-right: 10px;
-  
 }
 
 .images {
